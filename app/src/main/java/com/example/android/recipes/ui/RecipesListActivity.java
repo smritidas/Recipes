@@ -9,7 +9,7 @@ import android.support.v7.widget.RecyclerView;
 
 import com.example.android.recipes.R;
 import com.example.android.recipes.adapters.RecipeListAdapter;
-import com.example.android.recipes.models.Recipes;
+import com.example.android.recipes.models.network.Recipe;
 import com.example.android.recipes.services.RecipeService;
 
 import java.io.IOException;
@@ -27,7 +27,7 @@ public class RecipesListActivity extends AppCompatActivity {
     @BindView(R.id.recyclerView) RecyclerView mRecyclerView;
     private RecipeListAdapter mAdapter;
 
-    public ArrayList<Recipes> mRecipes = new ArrayList<>();
+    public ArrayList<Recipe> mRecipes = new ArrayList<>();
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {

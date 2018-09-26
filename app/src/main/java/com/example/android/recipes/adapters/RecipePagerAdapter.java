@@ -5,15 +5,15 @@ import android.support.v4.app.Fragment;
 import android.support.v4.app.FragmentManager;
 import android.support.v4.app.FragmentPagerAdapter;
 
-import com.example.android.recipes.models.Recipes;
+import com.example.android.recipes.models.network.Recipe;
 import com.example.android.recipes.ui.RecipeDetailFragment;
 
 import java.util.ArrayList;
 
 public class RecipePagerAdapter extends FragmentPagerAdapter {
-    private ArrayList<Recipes> mRecipes;
+    private ArrayList<Recipe> mRecipes;
 
-    public RecipePagerAdapter(FragmentManager fm, ArrayList<Recipes> recipe) {
+    public RecipePagerAdapter(FragmentManager fm, ArrayList<Recipe> recipe) {
         super(fm);
         mRecipes = recipe;
     }

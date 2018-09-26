@@ -1,7 +1,7 @@
 package com.example.android.recipes.services;
 
 import com.example.android.recipes.Constants;
-import com.example.android.recipes.models.Recipes;
+import com.example.android.recipes.models.network.Recipe;
 
 import org.json.JSONArray;
 import org.json.JSONException;
@@ -16,6 +16,8 @@ import okhttp3.HttpUrl;
 import okhttp3.OkHttpClient;
 import okhttp3.Request;
 import okhttp3.Response;
+
+//Old OkHTTP based
 
 public class RecipeService {
 
@@ -37,8 +39,8 @@ public class RecipeService {
         call.enqueue(callback);
     }
 
-    public ArrayList<Recipes> processResults(Response response){
-        ArrayList<Recipes> recipes = new ArrayList<>();
+    public ArrayList<Recipe> processResults(Response response){
+        ArrayList<Recipe> recipes = new ArrayList<>();
         try{
             String jsonData = response.body().string();
             if(response.isSuccessful()){
@@ -58,7 +60,7 @@ public class RecipeService {
                         recipe.add(recipeJSON.get(y).toString());
                     }
 
-                    Recipes food = new Recipes(name, imageURL, URL, noOfServings, recipe);
+                    Recipe food = new Recipe(name, imageURL, URL, noOfServings, recipe);
                     recipes.add(food);
                 }
             }

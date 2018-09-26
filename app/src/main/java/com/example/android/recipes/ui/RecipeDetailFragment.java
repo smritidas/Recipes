@@ -7,13 +7,10 @@ import android.view.LayoutInflater;
 import android.view.View;
 import android.view.ViewGroup;
 import android.widget.Button;
-import android.widget.ImageView;
-import android.widget.ListView;
 import android.widget.TextView;
 
 import com.example.android.recipes.R;
-import com.example.android.recipes.models.Recipes;
-import com.squareup.picasso.Picasso;
+import com.example.android.recipes.models.network.Recipe;
 
 import org.parceler.Parcels;
 
@@ -29,9 +26,9 @@ public class RecipeDetailFragment extends Fragment {
     @BindView(R.id.directions) TextView mDirectionsTextView;
     @BindView(R.id.saveRecipeButton) Button mButton;
 
-    private Recipes mRecipe;
+    private Recipe mRecipe;
 
-    public static RecipeDetailFragment newInstance(Recipes recipe){
+    public static RecipeDetailFragment newInstance(Recipe recipe){
         RecipeDetailFragment recipeDetailFragment = new RecipeDetailFragment();
         Bundle args = new Bundle();
         args.putParcelable("recipes", Parcels.wrap(recipe));

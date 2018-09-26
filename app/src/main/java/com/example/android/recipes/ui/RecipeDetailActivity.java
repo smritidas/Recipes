@@ -7,7 +7,7 @@ import android.support.v7.app.AppCompatActivity;
 
 import com.example.android.recipes.R;
 import com.example.android.recipes.adapters.RecipePagerAdapter;
-import com.example.android.recipes.models.Recipes;
+import com.example.android.recipes.models.network.Recipe;
 
 import org.parceler.Parcels;
 
@@ -21,7 +21,7 @@ import butterknife.ButterKnife;
 public class RecipeDetailActivity extends AppCompatActivity{
    @BindView(R.id.viewPager) ViewPager mViewPager;
    private RecipePagerAdapter adapterViewPager;
-   ArrayList<Recipes> mRecipes = new ArrayList<>();
+   ArrayList<Recipe> mRecipes = new ArrayList<>();
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
