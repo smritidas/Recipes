@@ -60,8 +60,8 @@ public class RecipeService {
                         recipe.add(recipeJSON.get(y).toString());
                     }
 
-                    Recipe food = new Recipe(name, imageURL, URL, noOfServings, recipe);
-                    recipes.add(food);
+                  //  Recipe food = new Recipe(name, imageURL, URL, noOfServings, recipe);
+                  //  recipes.add(food);
                 }
             }
 
