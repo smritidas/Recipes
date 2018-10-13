@@ -20,4 +20,15 @@ public class Ingredient {
 
     @SerializedName("food")
     private Food food;
+
+    @Override
+    public String toString() {
+        return "Ingredient{" +
+                "name='" + name + '\'' +
+                ", quantity=" + quantity +
+                ", measure=" + measure +
+                ", weight=" + weight +
+                ", food=" + food +
+                '}';
+    }
 }

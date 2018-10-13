@@ -6,4 +6,11 @@ public class Measure {
 
     @SerializedName("label")
     private String label;
+
+    @Override
+    public String toString() {
+        return "Measure{" +
+                "label='" + label + '\'' +
+                '}';
+    }
 }

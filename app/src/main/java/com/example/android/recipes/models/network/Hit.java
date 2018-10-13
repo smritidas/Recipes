@@ -11,6 +11,13 @@ public class Hit {
     @SerializedName("bookmarked")
     private boolean bookmarked;
 
+    @Override
+    public String toString() {
+        return "Hit{" +
+                "recipe=" + recipe +
+                ", bookmarked=" + bookmarked +
+                '}';
+    }
 }
 
 /**

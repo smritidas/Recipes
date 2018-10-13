@@ -12,4 +12,11 @@ public class RecipeSearchResultResponse {
 
     @SerializedName("hits")
     private List<Hit> recipeHits;
+
+    @Override
+    public String toString() {
+        return "RecipeSearchResultResponse{" +
+                "recipeHits=" + recipeHits +
+                '}';
+    }
 }

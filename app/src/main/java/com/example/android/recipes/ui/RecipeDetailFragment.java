@@ -43,9 +43,9 @@ public class RecipeDetailFragment extends Fragment {
         ButterKnife.bind(this, view);
       //  Picasso.with(view.getContext()).load(mRecipe.getImageURL()).into(mRecipeImageView);
 
-        mRecipeNameTextView.setText(mRecipe.getName());
-        mServingsTextView.setText(mRecipe.getNoOfServings());
-        mDirectionsTextView.setText(mRecipe.getUrl());
+//        mRecipeNameTextView.setText(mRecipe.getName());
+//        mServingsTextView.setText(mRecipe.getNoOfServings());
+//        mDirectionsTextView.setText(mRecipe.getUrl());
 
         //TODO - wire up the ingredientListView - how do I want do handle this?
         //TODO - wire up the button

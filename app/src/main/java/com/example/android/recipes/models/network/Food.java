@@ -7,4 +7,10 @@ public class Food {
     @SerializedName("label")
     private String label;
 
+    @Override
+    public String toString() {
+        return "Food{" +
+                "label='" + label + '\'' +
+                '}';
+    }
 }

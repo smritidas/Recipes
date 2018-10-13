@@ -30,6 +30,7 @@ public class RecipePagerAdapter extends FragmentPagerAdapter {
 
     @Override
     public CharSequence getPageTitle(int position) {
-        return mRecipes.get(position).getName();
+        return "FIX ME";
+//        return mRecipes.get(position).getName();
     }
 }

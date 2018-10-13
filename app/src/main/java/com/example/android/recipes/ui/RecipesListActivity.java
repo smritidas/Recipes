@@ -42,30 +42,30 @@ public class RecipesListActivity extends AppCompatActivity {
 
     private void getRecipes(String ingredient) {
         final RecipeService recipeService = new RecipeService();
-        recipeService.findRecipes(ingredient, new Callback() {
-            @Override
-            public void onFailure(Call call, IOException e) {
-                e.printStackTrace();
-            }
-
-            @Override
-            public void onResponse(Call call, Response response) {
-                mRecipes = recipeService.processResults(response);
-
-                RecipesListActivity.this.runOnUiThread(new Runnable() {
-                    @Override
-                    public void run() {
-                        mAdapter = new RecipeListAdapter(getApplicationContext(), mRecipes);
-                        RecyclerView.LayoutManager layoutManager =
-                                new LinearLayoutManager(RecipesListActivity.this);
-                        mRecyclerView.setLayoutManager(layoutManager);
-                        mRecyclerView.setAdapter(mAdapter);
-                        mRecyclerView.setHasFixedSize(true);
-                    }
-
-                });
-            }
-
-        });
+//        recipeService.findRecipes(ingredient, new Callback() {
+//            @Override
+//            public void onFailure(Call call, IOException e) {
+//                e.printStackTrace();
+//            }
+//
+//            @Override
+//            public void onResponse(Call call, Response response) {
+//                mRecipes = recipeService.processResults(response);
+//
+//                RecipesListActivity.this.runOnUiThread(new Runnable() {
+//                    @Override
+//                    public void run() {
+//                        mAdapter = new RecipeListAdapter(getApplicationContext(), mRecipes);
+//                        RecyclerView.LayoutManager layoutManager =
+//                                new LinearLayoutManager(RecipesListActivity.this);
+//                        mRecyclerView.setLayoutManager(layoutManager);
+//                        mRecyclerView.setAdapter(mAdapter);
+//                        mRecyclerView.setHasFixedSize(true);
+//                    }
+//
+//                });
+//            }
+//
+//        });
     }
 }

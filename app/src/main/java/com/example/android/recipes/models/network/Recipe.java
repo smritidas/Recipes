@@ -24,6 +24,15 @@ public class Recipe {
     @SerializedName("ingredients")
     private List<Ingredient> ingredients;
 
-
+    @Override
+    public String toString() {
+        return "Recipe{" +
+                "name='" + name + '\'' +
+                ", imageURL='" + imageURL + '\'' +
+                ", url='" + url + '\'' +
+                ", noOfServings=" + noOfServings +
+                ", ingredients=" + ingredients +
+                '}';
+    }
 }
 
