@@ -17,8 +17,6 @@ import retrofit2.http.Query;
 
 public interface WebService {
 
-//        @GET("/search?q")
-//        Observable<RecipeSearchResultResponse>
 
         /**
          * Step 1:

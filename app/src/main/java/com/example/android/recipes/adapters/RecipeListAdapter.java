@@ -41,7 +41,7 @@ public class RecipeListAdapter extends RecyclerView.Adapter<RecipeListAdapter.Re
 
     @Override
     public void onBindViewHolder(RecipeListAdapter.RecipeViewHolder holder, int position) {
-        holder.bindRecipe(mRecipe.get(position));
+
     }
 
     @Override
@@ -74,10 +74,5 @@ public class RecipeListAdapter extends RecyclerView.Adapter<RecipeListAdapter.Re
 
         }
 
-        public void bindRecipe(Recipe recipe){
-//            Picasso.with(mContext).load(recipe.getImageURL()).into(mRecipeImageView);
-//            mRecipeNameTextView.setText(recipe.getName());
-//            mNoOfServings.setText(recipe.getNoOfServings());
-        }
     }
 }

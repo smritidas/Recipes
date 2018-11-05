@@ -11,6 +11,14 @@ public class Hit {
     @SerializedName("bookmarked")
     private boolean bookmarked;
 
+    public Recipe getRecipe() {
+        return recipe;
+    }
+
+    public boolean isBookmarked() {
+        return bookmarked;
+    }
+
     @Override
     public String toString() {
         return "Hit{" +

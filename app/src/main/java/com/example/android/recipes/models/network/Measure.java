@@ -7,6 +7,10 @@ public class Measure {
     @SerializedName("label")
     private String label;
 
+    public String getLabel() {
+        return label;
+    }
+
     @Override
     public String toString() {
         return "Measure{" +

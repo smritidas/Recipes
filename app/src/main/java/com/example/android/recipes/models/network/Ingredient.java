@@ -21,6 +21,26 @@ public class Ingredient {
     @SerializedName("food")
     private Food food;
 
+    public String getName() {
+        return name;
+    }
+
+    public float getQuantity() {
+        return quantity;
+    }
+
+    public Measure getMeasure() {
+        return measure;
+    }
+
+    public float getWeight() {
+        return weight;
+    }
+
+    public Food getFood() {
+        return food;
+    }
+
     @Override
     public String toString() {
         return "Ingredient{" +

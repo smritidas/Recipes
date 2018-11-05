@@ -21,8 +21,6 @@ import retrofit2.Callback;
 import retrofit2.Response;
 
 //TODO (1) Follow a coding convention
-//TODO (2) How do I want to structure the API?
-
 
 public class MainActivity extends AppCompatActivity implements View.OnClickListener{
 
