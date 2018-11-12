@@ -1,5 +1,8 @@
 package com.example.android.recipes.adapters;
 
+/**
+ * Use this for fragment
+ */
 
 import android.support.v4.app.Fragment;
 import android.support.v4.app.FragmentManager;

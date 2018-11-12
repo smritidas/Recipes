@@ -13,7 +13,6 @@ import android.widget.TextView;
 import com.example.android.recipes.R;
 import com.example.android.recipes.models.network.Recipe;
 import com.example.android.recipes.ui.RecipeDetailActivity;
-import com.squareup.picasso.Picasso;
 
 import org.parceler.Parcels;
 
@@ -23,17 +22,17 @@ import butterknife.BindView;
 import butterknife.ButterKnife;
 
 public class RecipeListAdapter extends RecyclerView.Adapter<RecipeListAdapter.RecipeViewHolder>  {
-    private ArrayList<Recipe> mRecipe = new ArrayList<>();
-    private Context mContext;
+    private ArrayList<Recipe> recipe = new ArrayList<>(); //
+    private Context context;
 
     public RecipeListAdapter(Context context, ArrayList<Recipe> recipes){
-        mContext = context;
-        mRecipe = recipes;
+        context = context;
+        recipe = recipes;
     }
 
     @Override
     public RecipeListAdapter.RecipeViewHolder onCreateViewHolder(ViewGroup parent, int viewType) {
-        View view = LayoutInflater.from(parent.getContext()).inflate(R.layout.recipe_list_item,
+        View view = LayoutInflater.from(parent.getContext()).inflate(R.layout.recipe_list_item_rv,
                 parent,false);
         RecipeViewHolder viewHolder = new RecipeViewHolder(view);
         return viewHolder;
@@ -46,7 +45,7 @@ public class RecipeListAdapter extends RecyclerView.Adapter<RecipeListAdapter.Re
 
     @Override
     public int getItemCount() {
-        return mRecipe.size();
+        return recipe.size();
     }
 
     public class RecipeViewHolder extends RecyclerView.ViewHolder{
@@ -66,7 +65,7 @@ public class RecipeListAdapter extends RecyclerView.Adapter<RecipeListAdapter.Re
                     int itemPosition = getLayoutPosition();
                     Intent intent = new Intent(mContext, RecipeDetailActivity.class);
                     intent.putExtra("position", itemPosition + "");
-                    intent.putExtra("recipes", Parcels.wrap(mRecipe));
+                    intent.putExtra("recipes", Parcels.wrap(recipe));
                     mContext.startActivity(intent);
 
                 }

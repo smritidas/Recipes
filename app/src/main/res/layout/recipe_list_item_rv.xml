@@ -1,9 +1,12 @@
 <?xml version="1.0" encoding="utf-8"?>
 
-<!-- RecyclerView for recipes displayed-->
+<!-- RecyclerView + ListItemView for recipes displayed-->
+
+<!-- TODO Add a save/bookmark button to this -->
 
 <LinearLayout
     xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:tools="http://schemas.android.com/tools"
     android:orientation="horizontal"
     android:layout_width="match_parent"
     android:layout_height="wrap_content">
@@ -23,23 +26,25 @@
         android:padding="10dp">
 
         <TextView
+            android:id="@+id/recipeNameTextView"
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
-            android:id="@+id/recipeNameTextView"
+            android:text="@string/recipe_name"
+            android:textColor="@color/colorPrimaryText"
             android:textSize="20sp"
             android:textStyle="bold"
-            android:text="@string/recipe_name"
-            android:textColor="@color/colorPrimaryText" />
+            tools:fontFamily="@font/open_sans_light" />
 
         <TextView
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
             android:id="@+id/noOfServings"
             android:textSize="12sp"
-            android:text="@string/servings"
+            android:text="@string/sourcesite"
             android:textColor="@color/colorPrimaryText"
+            tools:fontFamily="@font/open_sans_light"
             />
-        <!-- TODO (3) Fix the alignments of the textviews -->
+
         <!-- TODO (4) Where to put ingredients? -->
     </LinearLayout>
 
