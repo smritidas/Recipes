@@ -6,4 +6,5 @@
     <string name="sourcesite">Sourcesite</string>
     <string name="save">Save Recipe</string>
     <string name="ingredients">Ingredients:</string>
+    <string name="yield">yield</string>
 </resources>

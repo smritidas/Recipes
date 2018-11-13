@@ -3,10 +3,12 @@
 <!-- RecyclerView + ListItemView for recipes displayed-->
 
 <!-- TODO Add a save/bookmark button to this -->
+<!-- TODO Do I want to keep this font -->
 
 <LinearLayout
     xmlns:android="http://schemas.android.com/apk/res/android"
     xmlns:tools="http://schemas.android.com/tools"
+    android:id="@+id/parent_recyclerview"
     android:orientation="horizontal"
     android:layout_width="match_parent"
     android:layout_height="wrap_content">
@@ -40,10 +42,22 @@
             android:layout_height="wrap_content"
             android:id="@+id/noOfServings"
             android:textSize="12sp"
+            android:text="@string/yield"
+            android:textColor="@color/colorPrimaryText"
+            tools:fontFamily="@font/open_sans_light"
+            />
+
+        <TextView
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:id="@+id/sourceSite"
+            android:textSize="12sp"
             android:text="@string/sourcesite"
             android:textColor="@color/colorPrimaryText"
             tools:fontFamily="@font/open_sans_light"
             />
+
+        <!-- TODO Add save icon here -->
 
         <!-- TODO (4) Where to put ingredients? -->
     </LinearLayout>

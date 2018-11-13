@@ -14,12 +14,16 @@ import com.example.android.recipes.R;
 import com.example.android.recipes.models.network.Recipe;
 import com.example.android.recipes.ui.RecipeDetailActivity;
 
-import org.parceler.Parcels;
+//import org.parceler.Parcels;
 
 import java.util.ArrayList;
 
 import butterknife.BindView;
 import butterknife.ButterKnife;
+
+/**
+ * OLD Recyclerview
+ */
 
 public class RecipeListAdapter extends RecyclerView.Adapter<RecipeListAdapter.RecipeViewHolder>  {
     private ArrayList<Recipe> recipe = new ArrayList<>(); //
@@ -65,7 +69,7 @@ public class RecipeListAdapter extends RecyclerView.Adapter<RecipeListAdapter.Re
                     int itemPosition = getLayoutPosition();
                     Intent intent = new Intent(mContext, RecipeDetailActivity.class);
                     intent.putExtra("position", itemPosition + "");
-                    intent.putExtra("recipes", Parcels.wrap(recipe));
+                   // intent.putExtra("recipes", Parcels.wrap(recipe));
                     mContext.startActivity(intent);
 
                 }
