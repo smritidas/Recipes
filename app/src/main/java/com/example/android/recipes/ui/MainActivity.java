@@ -20,9 +20,8 @@ import retrofit2.Call;
 import retrofit2.Callback;
 import retrofit2.Response;
 
-//TODO (1) Follow a coding convention
 
-public class MainActivity extends AppCompatActivity implements View.OnClickListener{
+public class MainActivity extends AppCompatActivity {
 
     private static final String TAG = MainActivity.class.getSimpleName();
 
@@ -38,33 +37,14 @@ public class MainActivity extends AppCompatActivity implements View.OnClickListe
 
         Typeface openSans = Typeface.createFromAsset(getAssets(), "fonts/OpenSans-Regular.ttf");
         appNameTextView.setTypeface(openSans);
-        findRecipesButton.setOnClickListener(this);
-
-        RetroFitClient.getWebService()
-                .getRecipes("chicken")
-                .enqueue(new Callback<RecipeSearchResultResponse>() {
-                    @Override
-                    public void onResponse(Call<RecipeSearchResultResponse> call,
-                                           Response<RecipeSearchResultResponse> response) {
-                        Log.i(TAG, response.body().toString());
-                    }
-
-                    @Override
-                    public void onFailure(Call<RecipeSearchResultResponse> call,
-                                          Throwable t) {
-                        Log.w(TAG, t);
-                    }
-                });
-
-    }
-
-    @Override
-    public void onClick(View view) {
-        if (view == findRecipesButton){
-            String ingredient = ingredientEditText.getText().toString();
-            Intent intent = new Intent(MainActivity.this, RecipesListActivity.class);
-            intent.putExtra("ingredient", ingredient);
-            startActivity(intent);
-        }
+        findRecipesButton.setOnClickListener(new View.OnClickListener() {
+            @Override
+            public void onClick(View view) {
+                String ingredient = ingredientEditText.getText().toString();
+                Intent intent = new Intent(MainActivity.this, RecipesListActivity.class);
+                intent.putExtra("ingredient", ingredient);
+                startActivity(intent);
+            }
+        });
     }
 }

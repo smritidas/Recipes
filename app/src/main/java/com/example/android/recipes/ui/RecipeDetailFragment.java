@@ -12,7 +12,7 @@ import android.widget.TextView;
 import com.example.android.recipes.R;
 import com.example.android.recipes.models.network.Recipe;
 
-import org.parceler.Parcels;
+//import org.parceler.Parcels;
 
 import butterknife.BindView;
 import butterknife.ButterKnife;
@@ -31,7 +31,7 @@ public class RecipeDetailFragment extends Fragment {
     public static RecipeDetailFragment newInstance(Recipe recipe){
         RecipeDetailFragment recipeDetailFragment = new RecipeDetailFragment();
         Bundle args = new Bundle();
-        args.putParcelable("recipes", Parcels.wrap(recipe));
+      //  args.putParcelable("recipes", Parcels.wrap(recipe));
         recipeDetailFragment.setArguments(args);
         return recipeDetailFragment;
     }

@@ -7,4 +7,6 @@
     <string name="save">Save Recipe</string>
     <string name="ingredients">Ingredients:</string>
     <string name="yield">yield</string>
+    <string name="servings">Servings</string>
+    <string name="directions">Directions</string>
 </resources>

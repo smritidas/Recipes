@@ -9,7 +9,7 @@ import com.example.android.recipes.R;
 import com.example.android.recipes.adapters.RecipePagerAdapter;
 import com.example.android.recipes.models.network.Recipe;
 
-import org.parceler.Parcels;
+//import org.parceler.Parcels;
 
 import java.util.ArrayList;
 
@@ -17,6 +17,7 @@ import butterknife.BindView;
 import butterknife.ButterKnife;
 
 //TODO - To add an implicit intent if the user wants to share the recipe via text/email?
+//Follow a coding convention
 
 public class RecipeDetailActivity extends AppCompatActivity{
    @BindView(R.id.viewPager) ViewPager mViewPager;
@@ -29,7 +30,7 @@ public class RecipeDetailActivity extends AppCompatActivity{
         setContentView(R.layout.activity_recipe_detail);
         ButterKnife.bind(this);
 
-        mRecipes = Parcels.unwrap(getIntent().getParcelableExtra("recipes"));
+        //mRecipes = Parcels.unwrap(getIntent().getParcelableExtra("recipes"));
         int startingPosition = getIntent().getIntExtra("position", 0);
 
         adapterViewPager = new RecipePagerAdapter(getSupportFragmentManager(), mRecipes);

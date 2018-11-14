@@ -3,31 +3,45 @@ package com.example.android.recipes.ui;
 import android.content.Intent;
 import android.support.v7.app.AppCompatActivity;
 import android.os.Bundle;
+import android.support.v7.widget.LinearLayoutManager;
 import android.support.v7.widget.RecyclerView;
+import android.util.Log;
 
 
 import com.example.android.recipes.R;
 import com.example.android.recipes.adapters.RecipeListAdapter;
+import com.example.android.recipes.adapters.RecipesAdapterRV;
+import com.example.android.recipes.models.network.Hit;
 import com.example.android.recipes.models.network.Recipe;
+import com.example.android.recipes.models.network.RecipeSearchResultResponse;
+import com.example.android.recipes.services.RetroFitClient;
 
+import java.io.IOException;
 import java.util.ArrayList;
+import java.util.List;
 
 import butterknife.BindView;
 import butterknife.ButterKnife;
+import retrofit2.Call;
+import retrofit2.Callback;
+import retrofit2.Response;
 
 public class RecipesListActivity extends AppCompatActivity {
     public static final String TAG = RecipesListActivity.class.getSimpleName();
 
     @BindView(R.id.recyclerView) RecyclerView mRecyclerView;
-    private RecipeListAdapter mAdapter;
+    private RecipesAdapterRV adapter;
 
-    public ArrayList<Recipe> mRecipes = new ArrayList<>();
+    public List<Recipe> recipes = new ArrayList<>();
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_recipes_rv);
         ButterKnife.bind(this);
+        adapter = new RecipesAdapterRV(this);
+        mRecyclerView.setAdapter(adapter);
+        mRecyclerView.setLayoutManager(new LinearLayoutManager(this));
 
         Intent intent = getIntent();
         String ingredient = intent.getStringExtra("ingredient");
@@ -35,31 +49,26 @@ public class RecipesListActivity extends AppCompatActivity {
     }
 
     private void getRecipes(String ingredient) {
- //       final RecipeService recipeService = new RecipeService();
-//        recipeService.findRecipes(ingredient, new Callback() {
-//            @Override
-//            public void onFailure(Call call, IOException e) {
-//                e.printStackTrace();
-//            }
-//
-//            @Override
-//            public void onResponse(Call call, Response response) {
-//                mRecipes = recipeService.processResults(response);
-//
-//                RecipesListActivity.this.runOnUiThread(new Runnable() {
-//                    @Override
-//                    public void run() {
-//                        mAdapter = new RecipeListAdapter(getApplicationContext(), mRecipes);
-//                        RecyclerView.LayoutManager layoutManager =
-//                                new LinearLayoutManager(RecipesListActivity.this);
-//                        mRecyclerView.setLayoutManager(layoutManager);
-//                        mRecyclerView.setAdapter(mAdapter);
-//                        mRecyclerView.setHasFixedSize(true);
-//                    }
-//
-//                });
-//            }
-//
-//        });
+        RetroFitClient.getWebService()
+                .getRecipes(ingredient)
+                .enqueue(new Callback<RecipeSearchResultResponse>() {
+                    @Override
+                    public void onResponse(Call<RecipeSearchResultResponse> call,
+                                           Response<RecipeSearchResultResponse> response) {
+                        List<Hit> hits = response.body().getRecipeHits();
+                        List<Recipe> recipes = new ArrayList<>();
+                        for (Hit hit : hits) {
+                            recipes.add(hit.getRecipe());
+                        }
+                        adapter.addRecipes(recipes);
+                        Log.i(TAG, response.body().toString());
+                    }
+
+                    @Override
+                    public void onFailure(Call<RecipeSearchResultResponse> call,
+                                          Throwable t) {
+                        Log.w(TAG, t);
+                    }
+                });
     }
 }
