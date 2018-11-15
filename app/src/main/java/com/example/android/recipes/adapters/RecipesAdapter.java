@@ -20,13 +20,15 @@ import butterknife.BindView;
 import butterknife.ButterKnife;
 
 
-public class RecipesAdapterRV extends RecyclerView.Adapter<RecipesAdapterRV.ViewHolder> {
+//Recyclerview Adapter
 
-    private static final String TAG = RecipesAdapterRV.class.getSimpleName();
-    private List<Recipe> recipes = new ArrayList<>(); //Should this be a list or an ArrayList?
-    private Context context; //What the heck is context?
+public class RecipesAdapter extends RecyclerView.Adapter<RecipesAdapter.ViewHolder> {
 
-    public RecipesAdapterRV(Context context) {
+    private static final String TAG = RecipesAdapter.class.getSimpleName();
+    private List<Recipe> recipes = new ArrayList<>();
+    private Context context;
+
+    public RecipesAdapter(Context context) {
         this.context = context;
     }
 
@@ -54,14 +56,14 @@ public class RecipesAdapterRV extends RecyclerView.Adapter<RecipesAdapterRV.View
     }
 
     @Override
-    public RecipesAdapterRV.ViewHolder onCreateViewHolder(ViewGroup parent, int viewType) {
+    public RecipesAdapter.ViewHolder onCreateViewHolder(ViewGroup parent, int viewType) {
         View view = LayoutInflater.from(parent.getContext()).inflate(R.layout.recipe_list_item_rv, parent, false);
         ViewHolder viewHolder = new ViewHolder(view);
         return viewHolder;
     }
 
     @Override
-    public void onBindViewHolder(RecipesAdapterRV.ViewHolder holder, int position) {
+    public void onBindViewHolder(RecipesAdapter.ViewHolder holder, int position) {
         Recipe recipe = recipes.get(position);
         holder.setupWithRecipe(recipe);
         //add Glide here

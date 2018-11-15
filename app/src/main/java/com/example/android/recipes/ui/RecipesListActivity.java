@@ -9,14 +9,12 @@ import android.util.Log;
 
 
 import com.example.android.recipes.R;
-import com.example.android.recipes.adapters.RecipeListAdapter;
-import com.example.android.recipes.adapters.RecipesAdapterRV;
+import com.example.android.recipes.adapters.RecipesAdapter;
 import com.example.android.recipes.models.network.Hit;
 import com.example.android.recipes.models.network.Recipe;
 import com.example.android.recipes.models.network.RecipeSearchResultResponse;
 import com.example.android.recipes.services.RetroFitClient;
 
-import java.io.IOException;
 import java.util.ArrayList;
 import java.util.List;
 
@@ -27,10 +25,11 @@ import retrofit2.Callback;
 import retrofit2.Response;
 
 public class RecipesListActivity extends AppCompatActivity {
+
     public static final String TAG = RecipesListActivity.class.getSimpleName();
 
     @BindView(R.id.recyclerView) RecyclerView mRecyclerView;
-    private RecipesAdapterRV adapter;
+    private RecipesAdapter adapter;
 
     public List<Recipe> recipes = new ArrayList<>();
 
@@ -39,7 +38,7 @@ public class RecipesListActivity extends AppCompatActivity {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_recipes_rv);
         ButterKnife.bind(this);
-        adapter = new RecipesAdapterRV(this);
+        adapter = new RecipesAdapter(this);
         mRecyclerView.setAdapter(adapter);
         mRecyclerView.setLayoutManager(new LinearLayoutManager(this));
 
