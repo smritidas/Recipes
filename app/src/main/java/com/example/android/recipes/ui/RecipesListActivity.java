@@ -28,7 +28,7 @@ public class RecipesListActivity extends AppCompatActivity {
 
     public static final String TAG = RecipesListActivity.class.getSimpleName();
 
-    @BindView(R.id.recyclerView) RecyclerView mRecyclerView;
+    @BindView(R.id.recyclerView) RecyclerView recyclerView;
     private RecipesAdapter adapter;
 
     public List<Recipe> recipes = new ArrayList<>();
@@ -39,8 +39,8 @@ public class RecipesListActivity extends AppCompatActivity {
         setContentView(R.layout.activity_recipes_rv);
         ButterKnife.bind(this);
         adapter = new RecipesAdapter(this);
-        mRecyclerView.setAdapter(adapter);
-        mRecyclerView.setLayoutManager(new LinearLayoutManager(this));
+        recyclerView.setAdapter(adapter);
+        recyclerView.setLayoutManager(new LinearLayoutManager(this));
 
         Intent intent = getIntent();
         String ingredient = intent.getStringExtra("ingredient");

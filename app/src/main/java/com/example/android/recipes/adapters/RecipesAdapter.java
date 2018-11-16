@@ -34,10 +34,10 @@ public class RecipesAdapter extends RecyclerView.Adapter<RecipesAdapter.ViewHold
 
     public class ViewHolder extends RecyclerView.ViewHolder {
 
-        @BindView(R.id.recipeImageView) ImageView image;
-        @BindView(R.id.recipeNameTextView) TextView nameOfRecipe;
-        @BindView(R.id.noOfServings) TextView yield;
-        @BindView(R.id.sourceSite) TextView url;
+        @BindView(R.id.recipeImageView) ImageView recipe_imageView;
+        @BindView(R.id.recipeNameTextView) TextView nameOfRecipe_textView;
+        @BindView(R.id.noOfServings) TextView yield_textView;
+        @BindView(R.id.sourceSite) TextView url_textView;
 
         public ViewHolder(View itemView) {
             super(itemView);
@@ -45,13 +45,13 @@ public class RecipesAdapter extends RecyclerView.Adapter<RecipesAdapter.ViewHold
         }
 
         public void setupWithRecipe(@NonNull Recipe recipe) {
-            nameOfRecipe.setText(recipe.getName());
-            yield.setText(Integer.toString(recipe.getNoOfServings()));
-            url.setText(recipe.getUrl());
+            nameOfRecipe_textView.setText(recipe.getName());
+            yield_textView.setText(Integer.toString(recipe.getNoOfServings()));
+            url_textView.setText(recipe.getUrl());
 
-            Glide.with(image)
+            Glide.with(recipe_imageView)
                     .load(recipe.getImageURL())
-                    .into(image);
+                    .into(recipe_imageView);
         }
     }
 

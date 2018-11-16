@@ -35,6 +35,7 @@ public class MainActivity extends AppCompatActivity {
         setContentView(R.layout.activity_main);
         ButterKnife.bind(this);
 
+        //TODO can declare fonts in XML now
         Typeface openSans = Typeface.createFromAsset(getAssets(), "fonts/OpenSans-Regular.ttf");
         appNameTextView.setTypeface(openSans);
         findRecipesButton.setOnClickListener(new View.OnClickListener() {
