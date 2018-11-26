@@ -25,14 +25,24 @@ import butterknife.ButterKnife;
 public class RecipesAdapter extends RecyclerView.Adapter<RecipesAdapter.ViewHolder> {
 
     private static final String TAG = RecipesAdapter.class.getSimpleName();
+
+    final private ListItemClickListener onItemClickListener;
+
     private List<Recipe> recipes = new ArrayList<>();
     private Context context;
 
-    public RecipesAdapter(Context context) {
-        this.context = context;
+    public interface ListItemClickListener{
+        void onListItemClick(int clickedItemIndex);
     }
 
-    public class ViewHolder extends RecyclerView.ViewHolder {
+    public RecipesAdapter(Context context, ListItemClickListener listener) {
+        this.context = context;
+        onItemClickListener = listener;
+    }
+
+    public class ViewHolder extends RecyclerView.ViewHolder
+            implements View.OnClickListener
+    {
 
         @BindView(R.id.recipeImageView) ImageView recipe_imageView;
         @BindView(R.id.recipeNameTextView) TextView nameOfRecipe_textView;
@@ -49,9 +59,17 @@ public class RecipesAdapter extends RecyclerView.Adapter<RecipesAdapter.ViewHold
             yield_textView.setText(Integer.toString(recipe.getNoOfServings()));
             url_textView.setText(recipe.getUrl());
 
+            itemView.setOnClickListener(this);
+
             Glide.with(recipe_imageView)
                     .load(recipe.getImageURL())
                     .into(recipe_imageView);
+        }
+
+        @Override
+        public void onClick(View view) {
+            int clickedPosition = getAdapterPosition();
+            onItemClickListener.onListItemClick(clickedPosition);
         }
     }
 

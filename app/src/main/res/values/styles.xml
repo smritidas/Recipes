@@ -1,5 +1,7 @@
 <resources>
 
+    <!-- Change to material components if using Material Design 2.0-->
+
     <!-- Base application theme. -->
     <style name="AppTheme" parent="Theme.AppCompat.Light.NoActionBar">
         <!-- Customize your theme here. -->
