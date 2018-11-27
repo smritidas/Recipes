@@ -12,6 +12,7 @@ import android.widget.TextView;
 import com.bumptech.glide.Glide;
 import com.example.android.recipes.R;
 import com.example.android.recipes.models.network.Recipe;
+import com.example.android.recipes.ui.RecipesListActivity;
 
 import java.util.ArrayList;
 import java.util.List;
@@ -26,22 +27,22 @@ public class RecipesAdapter extends RecyclerView.Adapter<RecipesAdapter.ViewHold
 
     private static final String TAG = RecipesAdapter.class.getSimpleName();
 
-    final private ListItemClickListener onItemClickListener;
+    private final ListItemClickListener onItemClickListener;
 
     private List<Recipe> recipes = new ArrayList<>();
     private Context context;
 
-    public interface ListItemClickListener{
-        void onListItemClick(int clickedItemIndex);
+    public interface ListItemClickListener{ //added interface here
+        void onListItemClick(int clickedItemIndex); //method
     }
 
     public RecipesAdapter(Context context, ListItemClickListener listener) {
         this.context = context;
-        onItemClickListener = listener;
+        onItemClickListener = listener; //added to constructor
     }
 
     public class ViewHolder extends RecyclerView.ViewHolder
-            implements View.OnClickListener
+            implements View.OnClickListener //implement interface
     {
 
         @BindView(R.id.recipeImageView) ImageView recipe_imageView;
@@ -59,7 +60,7 @@ public class RecipesAdapter extends RecyclerView.Adapter<RecipesAdapter.ViewHold
             yield_textView.setText(Integer.toString(recipe.getNoOfServings()));
             url_textView.setText(recipe.getUrl());
 
-            itemView.setOnClickListener(this);
+            itemView.setOnClickListener(this); //call in setup
 
             Glide.with(recipe_imageView)
                     .load(recipe.getImageURL())
@@ -67,7 +68,7 @@ public class RecipesAdapter extends RecyclerView.Adapter<RecipesAdapter.ViewHold
         }
 
         @Override
-        public void onClick(View view) {
+        public void onClick(View view) { //interface requires this method
             int clickedPosition = getAdapterPosition();
             onItemClickListener.onListItemClick(clickedPosition);
         }
@@ -84,8 +85,7 @@ public class RecipesAdapter extends RecyclerView.Adapter<RecipesAdapter.ViewHold
     public void onBindViewHolder(RecipesAdapter.ViewHolder holder, int position) {
         Recipe recipe = recipes.get(position);
         holder.setupWithRecipe(recipe);
-        //add Glide here
-        //add action for when item is clicked
+
 
     }
 

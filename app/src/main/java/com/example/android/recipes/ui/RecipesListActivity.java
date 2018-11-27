@@ -70,4 +70,8 @@ public class RecipesListActivity extends AppCompatActivity {
                     }
                 });
     }
+
+    public void onListItemClick(int clickedItemIndex){
+
+    }
 }
