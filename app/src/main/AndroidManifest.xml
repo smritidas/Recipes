@@ -26,6 +26,8 @@
                 >
         </meta-data>
         </activity>
+        <activity android:name=".ui.RecipeDetailActivity">
+        </activity>
 
 
         <meta-data

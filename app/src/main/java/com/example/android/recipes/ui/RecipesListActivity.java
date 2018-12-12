@@ -1,11 +1,13 @@
 package com.example.android.recipes.ui;
 
+import android.content.Context;
 import android.content.Intent;
 import android.support.v7.app.AppCompatActivity;
 import android.os.Bundle;
 import android.support.v7.widget.LinearLayoutManager;
 import android.support.v7.widget.RecyclerView;
 import android.util.Log;
+import android.widget.Toast;
 
 
 import com.example.android.recipes.R;
@@ -24,7 +26,7 @@ import retrofit2.Call;
 import retrofit2.Callback;
 import retrofit2.Response;
 
-public class RecipesListActivity extends AppCompatActivity {
+public class RecipesListActivity extends AppCompatActivity implements RecipesAdapter.ListItemClickListener{
 
     public static final String TAG = RecipesListActivity.class.getSimpleName();
 
@@ -38,7 +40,7 @@ public class RecipesListActivity extends AppCompatActivity {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_recipes_rv);
         ButterKnife.bind(this);
-        adapter = new RecipesAdapter(this);
+        adapter = new RecipesAdapter(this, this);
         recyclerView.setAdapter(adapter);
         recyclerView.setLayoutManager(new LinearLayoutManager(this));
 
@@ -71,7 +73,11 @@ public class RecipesListActivity extends AppCompatActivity {
                 });
     }
 
-    public void onListItemClick(int clickedItemIndex){
 
+    @Override
+    public void onClick(String recipeSelected) {
+        Context context = this;
+        Toast.makeText(context, recipeSelected, Toast.LENGTH_SHORT)
+                .show();
     }
 }
