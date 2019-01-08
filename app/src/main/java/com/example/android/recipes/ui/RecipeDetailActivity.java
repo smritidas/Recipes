@@ -8,6 +8,7 @@ import com.example.android.recipes.R;
 
 public class RecipeDetailActivity extends AppCompatActivity {
 
+
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);

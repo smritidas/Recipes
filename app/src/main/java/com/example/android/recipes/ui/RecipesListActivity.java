@@ -64,7 +64,6 @@ public class RecipesListActivity extends AppCompatActivity implements RecipesAda
                         adapter.addRecipes(recipes);
                         Log.i(TAG, response.body().toString());
                     }
-
                     @Override
                     public void onFailure(Call<RecipeSearchResultResponse> call,
                                           Throwable t) {
@@ -76,8 +75,8 @@ public class RecipesListActivity extends AppCompatActivity implements RecipesAda
 
     @Override
     public void onClick(String recipeSelected) {
-        Context context = this;
-        Toast.makeText(context, recipeSelected, Toast.LENGTH_SHORT)
-                .show();
+       Class destinationClass = RecipeDetailActivity.class;
+       Intent startRecipesListActivity = new Intent(this, destinationClass);
+       startActivity(startRecipesListActivity);
     }
 }

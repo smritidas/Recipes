@@ -70,7 +70,6 @@ public class RecipesAdapter extends RecyclerView.Adapter<RecipesAdapter.ViewHold
         @Override
         public void onClick(View view) { //interface requires this method
             int adapterPostion = getAdapterPosition();
-
             Recipe selectedRecipe = recipes.get(adapterPostion);
             onItemClickListener.onClick(selectedRecipe.getName());
         }
