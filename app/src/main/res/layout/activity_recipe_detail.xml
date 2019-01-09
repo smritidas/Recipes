@@ -37,7 +37,7 @@
                     android:id="@+id/recipeNameTextView"
                     android:layout_alignParentStart="true"
                     android:textSize="20sp"
-                    android:textColor="@color/colorPrimaryDark"
+                    android:textColor="@color/colorPrimaryText"
                     android:textStyle="bold"
                     />
 
@@ -48,7 +48,7 @@
                     android:id="@+id/noOfServingsTextViewTextView"
                     android:layout_alignBottom="@id/recipeNameTextView"
                     android:layout_alignParentEnd="true"
-                    android:textColor="@color/colorPrimary"
+                    android:textColor="@color/colorPrimaryText"
                     android:textStyle="italic" />
             </RelativeLayout>
 
@@ -70,7 +70,7 @@
                             android:layout_width="match_parent"
                             android:layout_height="wrap_content"
                             android:text="@string/ingredients"
-                            android:textColor="@color/colorPrimary"
+                            android:textColor="@color/colorPrimaryText"
                             android:textSize="15sp"
                             android:textStyle="bold"
                             android:gravity="start"
@@ -82,7 +82,7 @@
                             android:layout_height="wrap_content"
                             android:text="@string/directions"
                             android:id="@+id/directions"
-                            android:textColor="@color/colorPrimary"
+                            android:textColor="@color/colorPrimaryText"
                             android:textSize="15sp"
                             android:textStyle="bold"
                             android:layout_marginTop="10dp"
