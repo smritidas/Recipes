@@ -2,6 +2,7 @@ package com.example.android.recipes.ui;
 
 import android.content.Context;
 import android.content.Intent;
+import android.provider.ContactsContract;
 import android.support.v7.app.AppCompatActivity;
 import android.os.Bundle;
 import android.support.v7.widget.LinearLayoutManager;
@@ -76,7 +77,8 @@ public class RecipesListActivity extends AppCompatActivity implements RecipesAda
     @Override
     public void onClick(String recipeSelected) {
        Class destinationClass = RecipeDetailActivity.class;
-       Intent startRecipesListActivity = new Intent(this, destinationClass);
-       startActivity(startRecipesListActivity);
+       Intent startIntent = new Intent(this, destinationClass);
+       startIntent.putExtra(Intent.EXTRA_TEXT, recipeSelected);
+       startActivity(startIntent);
     }
 }
