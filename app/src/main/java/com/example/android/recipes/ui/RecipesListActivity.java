@@ -76,9 +76,9 @@ public class RecipesListActivity extends AppCompatActivity implements RecipesAda
 
     @Override
     public void onClick(String recipeSelected) {
-       Class destinationClass = RecipeDetailActivity.class;
+       Class destinationClass = RecipeDetailActivity.class; //this is superfluous
        Intent startIntent = new Intent(this, destinationClass);
-       startIntent.putExtra(Intent.EXTRA_TEXT, recipeSelected);
+       startIntent.putExtra("Name", recipeSelected);
        startActivity(startIntent);
     }
 }

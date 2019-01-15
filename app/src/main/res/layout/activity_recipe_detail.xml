@@ -42,12 +42,12 @@
                     />
 
                 <TextView
+                    android:id="@+id/noOfServingsTextView"
                     android:layout_width="wrap_content"
                     android:layout_height="wrap_content"
-                    android:text="@string/servings"
-                    android:id="@+id/noOfServingsTextViewTextView"
                     android:layout_alignBottom="@id/recipeNameTextView"
                     android:layout_alignParentEnd="true"
+                    android:text="@string/servings"
                     android:textColor="@color/colorPrimaryText"
                     android:textStyle="italic" />
             </RelativeLayout>
@@ -80,8 +80,8 @@
                         <TextView
                             android:layout_width="match_parent"
                             android:layout_height="wrap_content"
-                            android:text="@string/directions"
-                            android:id="@+id/directions"
+                            android:text="@string/Website"
+                            android:id="@+id/recipe_website"
                             android:textColor="@color/colorPrimaryText"
                             android:textSize="15sp"
                             android:textStyle="bold"
