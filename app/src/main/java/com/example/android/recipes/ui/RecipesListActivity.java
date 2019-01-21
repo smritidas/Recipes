@@ -78,7 +78,15 @@ public class RecipesListActivity extends AppCompatActivity implements RecipesAda
     public void onClick(String recipeSelected) {
        Class destinationClass = RecipeDetailActivity.class; //this is superfluous
        Intent startIntent = new Intent(this, destinationClass);
-       startIntent.putExtra("Name", recipeSelected);
+       startIntent.putExtra("name", recipeSelected);
+       startIntent.putExtra("url", recipeSelected);
        startActivity(startIntent);
     }
 }
+
+
+//Glide code
+
+//Make the Recipe Data URL global
+//find view by id imageView
+//make a seperate method for imageView using Glide

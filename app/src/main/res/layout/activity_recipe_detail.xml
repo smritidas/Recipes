@@ -1,5 +1,5 @@
 <!-- The recipe displayed -->
-
+<!--TODO (1) Does this need a scrollview? -->
 
 <FrameLayout
     xmlns:android="http://schemas.android.com/apk/res/android"
@@ -7,6 +7,7 @@
     android:layout_width="match_parent"
     android:layout_height="match_parent"
    >
+
 
     <LinearLayout
         android:orientation="vertical"
@@ -101,6 +102,7 @@
                     android:textColor="@color/colorTextIcons"
                     android:textSize="15sp" />
             </RelativeLayout>
+
     </LinearLayout>
 
 </FrameLayout>

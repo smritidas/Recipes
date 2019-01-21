@@ -19,14 +19,21 @@ public class RecipeDetailActivity extends AppCompatActivity {
 
         ImageView recipeImage = findViewById(R.id.recipeImageView);
         TextView recipeName = findViewById(R.id.recipeNameTextView);
-        TextView recipeServings = findViewById(R.id.noOfServingsTextView);
-        TextView ingredients = findViewById(R.id.ingredientTextView);
-        TextView website = findViewById(R.id.recipe_website);
+        TextView recipeYield = findViewById(R.id.noOfServingsTextView);
+        TextView recipeIngredients = findViewById(R.id.ingredientTextView);
+        TextView recipeWebsite = findViewById(R.id.recipe_website);
 
-        String name = getIntent().getStringExtra("Name");
+        Intent intent = getIntent();
+        String name = getIntent().getStringExtra("name");
+        String url = getIntent().getStringExtra("url");
+
+        //Binding the view to the data
+
         recipeName.setText(name);
+        recipeWebsite.setText(url);
 
 
+        //Opening the URL will require an implicit intent
 
 
 }}
