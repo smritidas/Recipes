@@ -47,7 +47,7 @@ public class RecipesAdapter extends RecyclerView.Adapter<RecipesAdapter.ViewHold
 
         @BindView(R.id.recipeImageView) ImageView recipe_imageView;
         @BindView(R.id.recipeNameTextView) TextView nameOfRecipe_textView;
-        @BindView(R.id.noOfServings) TextView yield_textView;
+       // @BindView(R.id.noOfServings) TextView yield_textView;
         @BindView(R.id.sourceSite) TextView url_textView;
 
         public ViewHolder(View itemView) {
@@ -57,7 +57,7 @@ public class RecipesAdapter extends RecyclerView.Adapter<RecipesAdapter.ViewHold
 
         public void setupWithRecipe(@NonNull Recipe recipe) {
             nameOfRecipe_textView.setText(recipe.getName());
-            yield_textView.setText(Integer.toString(recipe.getNoOfServings()));
+          //  yield_textView.setText(Integer.toString(recipe.getNoOfServings()));
             url_textView.setText(recipe.getUrl());
 
             itemView.setOnClickListener(this); //call in setup

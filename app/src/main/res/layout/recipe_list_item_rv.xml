@@ -33,19 +33,11 @@
             android:layout_height="wrap_content"
             android:text="@string/recipe_name"
             android:textColor="@color/colorPrimaryText"
+            android:layout_marginBottom="@dimen/activity_vertical_margin"
             android:textSize="20sp"
             android:textStyle="bold"
             tools:fontFamily="@font/open_sans_light" />
 
-        <TextView
-            android:layout_width="wrap_content"
-            android:layout_height="wrap_content"
-            android:id="@+id/noOfServings"
-            android:textSize="12sp"
-            android:text="@string/yield"
-            android:textColor="@color/colorPrimaryText"
-            tools:fontFamily="@font/open_sans_light"
-            />
 
         <TextView
             android:layout_width="wrap_content"

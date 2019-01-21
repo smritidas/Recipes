@@ -31,7 +31,7 @@
         android:layout_centerHorizontal="true"
         android:layout_marginTop="35dp"
         android:id="@+id/appNameTextView"
-        android:textColor="@color/colorTextIcons"
+        android:textColor="@color/colorWhite"
         android:textSize="60sp"
         android:textStyle="bold"/>
 
