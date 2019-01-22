@@ -33,10 +33,13 @@
             android:layout_height="wrap_content"
             android:text="@string/recipe_name"
             android:textColor="@color/colorPrimaryText"
-            android:layout_marginBottom="@dimen/activity_vertical_margin"
+            android:layout_marginBottom="@dimen/margin"
             android:textSize="20sp"
             android:textStyle="bold"
-            tools:fontFamily="@font/open_sans_light" />
+            tools:fontFamily="@font/open_sans_light"
+            android:scrollHorizontally="true"
+            android:ellipsize="end"
+            android:maxLines="1" />
 
 
         <TextView
