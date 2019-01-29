@@ -2,18 +2,23 @@ package com.example.android.recipes.ui;
 
 import android.content.Context;
 import android.content.Intent;
+import android.os.Parcel;
+import android.os.Parcelable;
 import android.provider.ContactsContract;
 import android.support.v7.app.AppCompatActivity;
 import android.os.Bundle;
 import android.support.v7.widget.LinearLayoutManager;
 import android.support.v7.widget.RecyclerView;
 import android.util.Log;
+import android.widget.ImageView;
 import android.widget.Toast;
+import com.bumptech.glide.Glide;
 
 
 import com.example.android.recipes.R;
 import com.example.android.recipes.adapters.RecipesAdapter;
 import com.example.android.recipes.models.network.Hit;
+import com.example.android.recipes.models.network.Ingredient;
 import com.example.android.recipes.models.network.Recipe;
 import com.example.android.recipes.models.network.RecipeSearchResultResponse;
 import com.example.android.recipes.services.RetroFitClient;
@@ -35,6 +40,9 @@ public class RecipesListActivity extends AppCompatActivity implements RecipesAda
     private RecipesAdapter adapter;
 
     public List<Recipe> recipes = new ArrayList<>();
+    private List<Ingredient> ingredients;
+    private Context context;
+    private String imageURL;
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
@@ -74,14 +82,26 @@ public class RecipesListActivity extends AppCompatActivity implements RecipesAda
     }
 
 
+    //Need to send image, name, url and list of ingredients
     @Override
     public void onClick(String recipeSelected) {
        Class destinationClass = RecipeDetailActivity.class; //this is superfluous
        Intent startIntent = new Intent(this, destinationClass);
-       startIntent.putExtra("name", recipeSelected);
-       startIntent.putExtra("url", recipeSelected);
+       startIntent.putExtra("NAME", recipeSelected);
+
+
+
+       //startIntent.putExtra("IMAGE_URL", recipeSelected);
+
+
+        //imageView
+//        ImageView imageView = findViewById(R.id.recipeImageView);
+//        Glide.with(context).load(imageURL).into(imageView);
+
+
        startActivity(startIntent);
     }
+
 }
 
 

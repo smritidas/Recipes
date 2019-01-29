@@ -4,6 +4,7 @@ package com.example.android.recipes.ui;
 import android.content.Intent;
 import android.os.Bundle;
 import android.support.v7.app.AppCompatActivity;
+import android.widget.Button;
 import android.widget.ImageView;
 import android.widget.TextView;
 
@@ -19,21 +20,20 @@ public class RecipeDetailActivity extends AppCompatActivity {
 
         ImageView recipeImage = findViewById(R.id.recipeImageView);
         TextView recipeName = findViewById(R.id.recipeNameTextView);
-        TextView recipeYield = findViewById(R.id.noOfServingsTextView);
         TextView recipeIngredients = findViewById(R.id.ingredientTextView);
-        TextView recipeWebsite = findViewById(R.id.recipe_website);
+        Button recipeWebsiteButton = findViewById(R.id.recipe_website_button);
 
         Intent intent = getIntent();
-        String name = getIntent().getStringExtra("name");
-        String url = getIntent().getStringExtra("url");
+        String name = getIntent().getStringExtra("NAME");
+        String ingredients = getIntent().getStringExtra("ingredients");
+
 
         //Binding the view to the data
 
-        recipeName.setText(name);
-        recipeWebsite.setText(url);
+        recipeName.setText(name); //working correctly
 
 
-        //Opening the URL will require an implicit intent
+        //TODO Opening the URL will require an implicit intent
 
 
 }}

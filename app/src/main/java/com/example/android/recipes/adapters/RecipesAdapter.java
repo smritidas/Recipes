@@ -72,6 +72,9 @@ public class RecipesAdapter extends RecyclerView.Adapter<RecipesAdapter.ViewHold
             int adapterPostion = getAdapterPosition();
             Recipe selectedRecipe = recipes.get(adapterPostion);
             onItemClickListener.onClick(selectedRecipe.getName());
+            //onItemClickListener.onClick(selectedRecipe.getImageURL());
+            //onItemClickListener.onClick(selectedRecipe.getUrl());
+           // onItemClickListener.onClick(selectedRecipe.getIngredients());
         }
     }
 
