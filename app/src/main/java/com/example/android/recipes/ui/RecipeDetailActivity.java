@@ -25,12 +25,13 @@ public class RecipeDetailActivity extends AppCompatActivity {
 
         Intent intent = getIntent();
         String name = getIntent().getStringExtra("NAME");
-       // String ingredients = getIntent().getStringExtra("ingredients");
+        String url = getIntent().getStringExtra("URL");
 
 
         //Binding the view to the data
 
-        recipeName.setText(name); //working correctly
+        recipeName.setText(name);
+        recipeWebsiteButton.setText(url); //TODO hide the URL behind the button
 
 
         //TODO Opening the URL will require an implicit intent

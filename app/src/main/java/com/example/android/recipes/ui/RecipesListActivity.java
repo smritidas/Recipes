@@ -86,6 +86,7 @@ public class RecipesListActivity extends AppCompatActivity implements RecipesAda
     public void onClick(Recipe recipe) {
         Intent startIntent = new Intent(this, RecipeDetailActivity.class);
         startIntent.putExtra("NAME", recipe.getName());
+        startIntent.putExtra("URL", recipe.getUrl());
         startActivity(startIntent);
     }
 }
