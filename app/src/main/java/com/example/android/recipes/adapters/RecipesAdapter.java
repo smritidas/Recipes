@@ -33,7 +33,7 @@ public class RecipesAdapter extends RecyclerView.Adapter<RecipesAdapter.ViewHold
     private Context context;
 
     public interface ListItemClickListener{ //added interface here
-        void onClick(String recipeSelected); //method
+        void onClick(Recipe recipe); //method
     }
 
     public RecipesAdapter(Context context, ListItemClickListener listener) {
@@ -68,13 +68,10 @@ public class RecipesAdapter extends RecyclerView.Adapter<RecipesAdapter.ViewHold
         }
 
         @Override
-        public void onClick(View view) { //interface requires this method
-            int adapterPostion = getAdapterPosition();
-            Recipe selectedRecipe = recipes.get(adapterPostion);
-            onItemClickListener.onClick(selectedRecipe.getName());
-            //onItemClickListener.onClick(selectedRecipe.getImageURL());
-            //onItemClickListener.onClick(selectedRecipe.getUrl());
-           // onItemClickListener.onClick(selectedRecipe.getIngredients());
+        public void onClick(View view) {
+            int adapterPosition = getAdapterPosition();
+            Recipe selectedRecipe = recipes.get(adapterPosition);
+            onItemClickListener.onClick(selectedRecipe);
         }
     }
 
@@ -89,8 +86,6 @@ public class RecipesAdapter extends RecyclerView.Adapter<RecipesAdapter.ViewHold
     public void onBindViewHolder(RecipesAdapter.ViewHolder holder, int position) {
         Recipe recipe = recipes.get(position);
         holder.setupWithRecipe(recipe);
-
-
     }
 
     @Override

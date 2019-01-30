@@ -25,7 +25,7 @@ public class RecipeDetailActivity extends AppCompatActivity {
 
         Intent intent = getIntent();
         String name = getIntent().getStringExtra("NAME");
-        String ingredients = getIntent().getStringExtra("ingredients");
+       // String ingredients = getIntent().getStringExtra("ingredients");
 
 
         //Binding the view to the data

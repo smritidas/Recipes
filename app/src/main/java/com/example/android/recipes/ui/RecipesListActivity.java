@@ -82,26 +82,12 @@ public class RecipesListActivity extends AppCompatActivity implements RecipesAda
     }
 
 
-    //Need to send image, name, url and list of ingredients
     @Override
-    public void onClick(String recipeSelected) {
-       Class destinationClass = RecipeDetailActivity.class; //this is superfluous
-       Intent startIntent = new Intent(this, destinationClass);
-       startIntent.putExtra("NAME", recipeSelected);
-
-
-
-       //startIntent.putExtra("IMAGE_URL", recipeSelected);
-
-
-        //imageView
-//        ImageView imageView = findViewById(R.id.recipeImageView);
-//        Glide.with(context).load(imageURL).into(imageView);
-
-
-       startActivity(startIntent);
+    public void onClick(Recipe recipe) {
+        Intent startIntent = new Intent(this, RecipeDetailActivity.class);
+        startIntent.putExtra("NAME", recipe.getName());
+        startActivity(startIntent);
     }
-
 }
 
 
