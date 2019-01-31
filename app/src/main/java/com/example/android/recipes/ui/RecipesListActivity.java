@@ -93,10 +93,3 @@ public class RecipesListActivity extends AppCompatActivity implements RecipesAda
         startActivity(startIntent);
     }
 }
-
-
-//Glide code
-
-//Make the Recipe Data URL global
-//find view by id imageView
-//make a seperate method for imageView using Glide
