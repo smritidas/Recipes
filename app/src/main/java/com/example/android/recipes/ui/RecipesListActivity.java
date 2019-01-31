@@ -21,6 +21,7 @@ import com.example.android.recipes.models.network.Hit;
 import com.example.android.recipes.models.network.Ingredient;
 import com.example.android.recipes.models.network.Recipe;
 import com.example.android.recipes.models.network.RecipeSearchResultResponse;
+import com.example.android.recipes.models.network.RecipeSelectedManager;
 import com.example.android.recipes.services.RetroFitClient;
 
 import java.util.ArrayList;
@@ -87,6 +88,8 @@ public class RecipesListActivity extends AppCompatActivity implements RecipesAda
         Intent startIntent = new Intent(this, RecipeDetailActivity.class);
         startIntent.putExtra("NAME", recipe.getName());
         startIntent.putExtra("URL", recipe.getUrl());
+        startIntent.putExtra("IMAGE_URL", recipe.getImageURL());
+      //  RecipeSelectedManager.getInstance().setSelectedRecipe(recipe); //this is for the ingredients list
         startActivity(startIntent);
     }
 }

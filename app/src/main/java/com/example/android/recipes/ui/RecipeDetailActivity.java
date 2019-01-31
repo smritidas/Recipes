@@ -8,7 +8,10 @@ import android.widget.Button;
 import android.widget.ImageView;
 import android.widget.TextView;
 
+import com.bumptech.glide.Glide;
 import com.example.android.recipes.R;
+import com.example.android.recipes.models.network.Recipe;
+import com.example.android.recipes.models.network.RecipeSelectedManager;
 
 public class RecipeDetailActivity extends AppCompatActivity {
 
@@ -21,17 +24,25 @@ public class RecipeDetailActivity extends AppCompatActivity {
         ImageView recipeImage = findViewById(R.id.recipeImageView);
         TextView recipeName = findViewById(R.id.recipeNameTextView);
         TextView recipeIngredients = findViewById(R.id.ingredientTextView);
-        Button recipeWebsiteButton = findViewById(R.id.recipe_website_button);
+        Button recipeWebsiteButton = findViewById(R.id.recipe_website_button); //follow a common code convention
 
         Intent intent = getIntent();
         String name = getIntent().getStringExtra("NAME");
         String url = getIntent().getStringExtra("URL");
+        String imageUrl = getIntent().getStringExtra("IMAGE_URL");
+      //  Recipe recipe = RecipeSelectedManager.getInstance().getSelectedRecipe();
 
 
         //Binding the view to the data
 
+
         recipeName.setText(name);
         recipeWebsiteButton.setText(url); //TODO hide the URL behind the button
+     //   recipeIngredients.setText(recipe);
+
+        Glide.with(recipeImage)
+                .load(imageUrl)
+                .into(recipeImage);
 
 
         //TODO Opening the URL will require an implicit intent
