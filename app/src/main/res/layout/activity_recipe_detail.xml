@@ -41,16 +41,6 @@
                     android:textColor="@color/colorPrimaryText"
                     android:textStyle="bold"
                     />
-
-                <TextView
-                    android:id="@+id/noOfServingsTextView"
-                    android:layout_width="wrap_content"
-                    android:layout_height="wrap_content"
-                    android:layout_alignBottom="@id/recipeNameTextView"
-                    android:layout_alignParentEnd="true"
-                    android:text="@string/servings"
-                    android:textColor="@color/colorPrimaryText"
-                    android:textStyle="italic" />
             </RelativeLayout>
 
             <RelativeLayout

@@ -24,7 +24,7 @@ public class RecipeDetailActivity extends AppCompatActivity {
         ImageView recipeImage = findViewById(R.id.recipeImageView);
         TextView recipeName = findViewById(R.id.recipeNameTextView);
         TextView recipeIngredients = findViewById(R.id.ingredientTextView);
-        Button recipeWebsiteButton = findViewById(R.id.recipe_website_button); //follow a common code convention
+        Button recipeWebsiteButton = findViewById(R.id.recipe_website_button); //TODO follow a common code convention
 
         Intent intent = getIntent();
         String name = getIntent().getStringExtra("NAME");
@@ -33,14 +33,11 @@ public class RecipeDetailActivity extends AppCompatActivity {
       //  Recipe recipe = RecipeSelectedManager.getInstance().getSelectedRecipe();
 
 
-        //Binding the view to the data
-
-
         recipeName.setText(name);
         recipeWebsiteButton.setText(url); //TODO hide the URL behind the button
      //   recipeIngredients.setText(recipe);
 
-        Glide.with(recipeImage)
+        Glide.with(recipeImage) //TODO Resize image
                 .load(imageUrl)
                 .into(recipeImage);
 
