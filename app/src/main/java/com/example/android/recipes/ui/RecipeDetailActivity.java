@@ -9,6 +9,9 @@ import android.widget.ImageView;
 import android.widget.TextView;
 
 import com.bumptech.glide.Glide;
+import com.bumptech.glide.request.RequestOptions;
+import com.bumptech.glide.annotation.GlideModule;
+import com.bumptech.glide.module.AppGlideModule;
 import com.example.android.recipes.R;
 import com.example.android.recipes.models.network.Recipe;
 import com.example.android.recipes.models.network.RecipeSelectedManager;
@@ -37,8 +40,10 @@ public class RecipeDetailActivity extends AppCompatActivity {
         recipeWebsiteButton.setText(url); //TODO hide the URL behind the button
      //   recipeIngredients.setText(recipe);
 
-        Glide.with(recipeImage) //TODO Resize image
+        Glide.with(recipeImage)
                 .load(imageUrl)
+                .apply(new RequestOptions()
+                .fitCenter())
                 .into(recipeImage);
 
 
