@@ -2,8 +2,10 @@ package com.example.android.recipes.ui;
 
 
 import android.content.Intent;
+import android.net.Uri;
 import android.os.Bundle;
 import android.support.v7.app.AppCompatActivity;
+import android.view.View;
 import android.widget.Button;
 import android.widget.ImageView;
 import android.widget.TextView;
@@ -31,7 +33,7 @@ public class RecipeDetailActivity extends AppCompatActivity {
 
         Intent intent = getIntent();
         String name = getIntent().getStringExtra("NAME");
-        String url = getIntent().getStringExtra("URL");
+        final String url = getIntent().getStringExtra("URL");
         String imageUrl = getIntent().getStringExtra("IMAGE_URL");
       //  Recipe recipe = RecipeSelectedManager.getInstance().getSelectedRecipe();
 
@@ -47,7 +49,14 @@ public class RecipeDetailActivity extends AppCompatActivity {
                 .into(recipeImage);
 
 
-        //TODO Opening the URL will require an implicit intent
+        findViewById(R.id.recipe_website_button).setOnClickListener(new View.OnClickListener() {
+            @Override
+            public void onClick(View view) {
+                Intent browserIntent = new Intent(Intent.ACTION_VIEW);
+                browserIntent.setData(Uri.parse(url));
+                startActivity(browserIntent);
+            }
+        });
 
 
 }}
