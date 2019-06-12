@@ -4,7 +4,9 @@ package com.example.android.recipes.ui;
 import android.content.Intent;
 import android.net.Uri;
 import android.os.Bundle;
+import android.support.annotation.NonNull;
 import android.support.v7.app.AppCompatActivity;
+import android.util.Log;
 import android.view.View;
 import android.widget.Button;
 import android.widget.ImageView;
@@ -15,11 +17,13 @@ import com.bumptech.glide.request.RequestOptions;
 import com.bumptech.glide.annotation.GlideModule;
 import com.bumptech.glide.module.AppGlideModule;
 import com.example.android.recipes.R;
+import com.example.android.recipes.models.network.Ingredient;
 import com.example.android.recipes.models.network.Recipe;
 import com.example.android.recipes.models.network.RecipeSelectedManager;
 
-public class RecipeDetailActivity extends AppCompatActivity {
+import java.util.List;
 
+public class RecipeDetailActivity extends AppCompatActivity {
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
@@ -35,12 +39,16 @@ public class RecipeDetailActivity extends AppCompatActivity {
         String name = getIntent().getStringExtra("NAME");
         final String url = getIntent().getStringExtra("URL");
         String imageUrl = getIntent().getStringExtra("IMAGE_URL");
-      //  Recipe recipe = RecipeSelectedManager.getInstance().getSelectedRecipe();
+
+        Recipe recipe = RecipeSelectedManager.getInstance().getSelectedRecipe();
 
 
         recipeName.setText(name);
         recipeWebsiteButton.setText(url); //TODO hide the URL behind the button
-     //   recipeIngredients.setText(recipe);
+
+        String listOfIngredients = getIngredientsFromRecipe(recipe);
+        Log.i("Ingredients: ", listOfIngredients);
+        recipeIngredients.setText(listOfIngredients);
 
         Glide.with(recipeImage)
                 .load(imageUrl)
@@ -58,5 +66,25 @@ public class RecipeDetailActivity extends AppCompatActivity {
             }
         });
 
+        //TODO(1) when saved button is clicked should persist to RoomDB
 
-}}
+}
+
+    @NonNull
+    private String getIngredientsFromRecipe(@NonNull Recipe recipe) {
+        //This is to convert the list of ingredients to a string
+        StringBuilder listOfIngredientsStringBuilder = new StringBuilder();
+
+        String SEPARATOR = ",";
+        List<Ingredient> ingredients = recipe.getIngredients();
+
+        for(Ingredient ingredient : ingredients){
+            listOfIngredientsStringBuilder.append(ingredient.getText());
+            listOfIngredientsStringBuilder.append(SEPARATOR);
+        }
+
+        return listOfIngredientsStringBuilder.toString();
+    }
+
+
+}

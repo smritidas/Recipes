@@ -89,7 +89,19 @@ public class RecipesListActivity extends AppCompatActivity implements RecipesAda
         startIntent.putExtra("NAME", recipe.getName());
         startIntent.putExtra("URL", recipe.getUrl());
         startIntent.putExtra("IMAGE_URL", recipe.getImageURL());
-      //  RecipeSelectedManager.getInstance().setSelectedRecipe(recipe); //this is for the ingredients list
+        StringBuilder listOfIngredientsStringBuilder = new StringBuilder();
+
+        String SEPARATOR = ",";
+        List<Ingredient> ingredients = recipe.getIngredients();
+
+        for(Ingredient ingredient : ingredients){
+            listOfIngredientsStringBuilder.append(ingredient);
+            listOfIngredientsStringBuilder.append(SEPARATOR);
+        }
+
+        String listOfIngredients = listOfIngredientsStringBuilder.toString();
+        Log.i("Set Ingredients: ", listOfIngredients);
+        RecipeSelectedManager.getInstance().setSelectedRecipe(recipe); //this is for the ingredients list
         startActivity(startIntent);
     }
 }

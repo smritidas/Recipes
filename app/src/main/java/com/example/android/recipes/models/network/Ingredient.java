@@ -1,6 +1,8 @@
 package com.example.android.recipes.models.network;
 
-
+/**
+ * the API has changed June 2019 - I added text
+ */
 
 import com.google.gson.annotations.SerializedName;
 
@@ -20,6 +22,12 @@ public class Ingredient {
 
     @SerializedName("food")
     private Food food;
+
+    @SerializedName("text")
+    private String text;
+
+    public String getText() {
+        return text; }
 
     public String getName() {
         return name;
@@ -49,6 +57,7 @@ public class Ingredient {
                 ", measure=" + measure +
                 ", weight=" + weight +
                 ", food=" + food +
+                ", text=" + text +
                 '}';
     }
 }

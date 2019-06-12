@@ -58,6 +58,7 @@ public class RecipesAdapter extends RecyclerView.Adapter<RecipesAdapter.ViewHold
         public void setupWithRecipe(@NonNull Recipe recipe) {
             nameOfRecipe_textView.setText(recipe.getName());
           //  yield_textView.setText(Integer.toString(recipe.getNoOfServings()));
+
             url_textView.setText(recipe.getUrl());
 
             itemView.setOnClickListener(this); //call in setup
