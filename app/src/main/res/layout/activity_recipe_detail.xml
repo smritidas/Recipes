@@ -83,7 +83,7 @@
                             android:layout_width="match_parent"
                             android:layout_height="match_parent"
                             android:text="@string/Directions"
-                            android:id="@+id/recipe_website_button"
+                            android:id="@+id/recipeWebsiteButton"
                             android:background="@color/colorAccent"
                             android:textColor="@color/colorPrimaryText"
                             android:textSize="15sp"

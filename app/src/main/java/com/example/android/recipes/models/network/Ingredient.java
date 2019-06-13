@@ -1,7 +1,7 @@
 package com.example.android.recipes.models.network;
 
 /**
- * the API has changed June 2019 - I added text
+ * the API has changed June 2019 - I added text - the API doesn't record this
  */
 
 import com.google.gson.annotations.SerializedName;

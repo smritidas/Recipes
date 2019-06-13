@@ -33,9 +33,9 @@ public class RecipeDetailActivity extends AppCompatActivity {
         ImageView recipeImage = findViewById(R.id.recipeImageView);
         TextView recipeName = findViewById(R.id.recipeNameTextView);
         TextView recipeIngredients = findViewById(R.id.ingredientTextView);
-        Button recipeWebsiteButton = findViewById(R.id.recipe_website_button); //TODO follow a common code convention
+        Button recipeWebsiteButton = findViewById(R.id.recipeWebsiteButton);
 
-        Intent intent = getIntent();
+
         String name = getIntent().getStringExtra("NAME");
         final String url = getIntent().getStringExtra("URL");
         String imageUrl = getIntent().getStringExtra("IMAGE_URL");
@@ -47,7 +47,7 @@ public class RecipeDetailActivity extends AppCompatActivity {
         recipeWebsiteButton.setText(url); //TODO hide the URL behind the button
 
         String listOfIngredients = getIngredientsFromRecipe(recipe);
-        Log.i("Ingredients: ", listOfIngredients);
+      //  Log.i("Ingredients: ", listOfIngredients);
         recipeIngredients.setText(listOfIngredients);
 
         Glide.with(recipeImage)
@@ -57,7 +57,7 @@ public class RecipeDetailActivity extends AppCompatActivity {
                 .into(recipeImage);
 
 
-        findViewById(R.id.recipe_website_button).setOnClickListener(new View.OnClickListener() {
+        findViewById(R.id.recipeWebsiteButton).setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View view) {
                 Intent browserIntent = new Intent(Intent.ACTION_VIEW);
