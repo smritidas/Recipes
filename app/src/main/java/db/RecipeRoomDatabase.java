@@ -13,13 +13,14 @@ public abstract class RecipeRoomDatabase extends RoomDatabase {
 
     private static volatile RecipeRoomDatabase INSTANCE;
 
-    static RecipeRoomDatabase getDatabase(final Context context) {
+    public static synchronized RecipeRoomDatabase getDatabase(final Context context) {
         if (INSTANCE == null) {
             synchronized (RecipeRoomDatabase.class) {
                 if (INSTANCE == null) {
                     if (INSTANCE == null) {
                         INSTANCE = Room.databaseBuilder(context.getApplicationContext(),
                                 RecipeRoomDatabase.class, "recipe_database")
+                                .fallbackToDestructiveMigration()
                                 .build();
                     }
                 }
