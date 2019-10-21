@@ -10,6 +10,10 @@ import com.example.android.recipes.models.network.Ingredient;
 
 import java.util.List;
 
+/**
+ * NB This is the Entity class
+ */
+
 @android.arch.persistence.room.Entity(tableName = "savedRecipe")
 public class Entry {
 
