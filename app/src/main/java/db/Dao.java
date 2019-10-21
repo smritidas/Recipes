@@ -19,10 +19,10 @@ public interface Dao {
     @Update
     void update(Entry recipe);
 
-    @Query("DELETE FROM savedRecipe")
+    @Query("DELETE FROM savedRecipe_table")
     void deleteAll();
 
-    @Query("SELECT * from savedRecipe ORDER BY name ASC")
+    @Query("SELECT * from savedRecipe_table ORDER BY name ASC")
     LiveData<List<Entry>> getAllRecipes();
 
 

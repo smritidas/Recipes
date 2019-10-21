@@ -12,9 +12,10 @@ import java.util.List;
 
 /**
  * NB This is the Entity class
+ * TODO - ask how to rename this?
  */
 
-@android.arch.persistence.room.Entity(tableName = "savedRecipe")
+@android.arch.persistence.room.Entity(tableName = "savedRecipe_table")
 public class Entry {
 
     @ColumnInfo
