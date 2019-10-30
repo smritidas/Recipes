@@ -36,13 +36,6 @@ public interface WebService {
          * Call<RecipeSearchResultResponse> getRecipes(String userInput);
          */
 
-        /*
-        https://api.edamam.com/search
-        FIXED: ?app_id=bf667bb5
-        FIXED: &app_key=26ebe966f1ca8e963cafe2b32000cee6
-
-        &q=chicken
-         */
         @GET("/search?app_id=" + Constants.APP_ID + "&app_key=" + Constants.APP_KEY)
         Call<RecipeSearchResultResponse> getRecipes(@Query("q") String userInput);
 
