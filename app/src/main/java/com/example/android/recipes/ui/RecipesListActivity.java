@@ -10,6 +10,8 @@ import android.os.Bundle;
 import android.support.v7.widget.LinearLayoutManager;
 import android.support.v7.widget.RecyclerView;
 import android.util.Log;
+import android.view.View;
+import android.widget.Button;
 import android.widget.ImageView;
 import android.widget.Toast;
 import com.bumptech.glide.Glide;
@@ -44,6 +46,7 @@ public class RecipesListActivity extends AppCompatActivity implements RecipesAda
     private List<Ingredient> ingredients;
     private Context context;
     private String imageURL;
+    private Button saveButton;
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
@@ -57,6 +60,15 @@ public class RecipesListActivity extends AppCompatActivity implements RecipesAda
         Intent intent = getIntent();
         String ingredient = intent.getStringExtra("ingredient");
         getRecipes(ingredient);
+
+        saveButton = findViewById(R.id.saveRecipeButton);
+        saveButton.setOnClickListener(new View.OnClickListener() {
+            @Override
+            public void onClick(View view) {
+                Log.d(TAG, "onClick: pressed");
+                //what to write to persist to database
+            }
+        });
     }
 
     private void getRecipes(String ingredient) {
