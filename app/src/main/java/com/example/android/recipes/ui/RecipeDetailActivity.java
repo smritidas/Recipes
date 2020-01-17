@@ -25,6 +25,8 @@ import java.util.List;
 
 public class RecipeDetailActivity extends AppCompatActivity {
 
+    //TODO check that code is persisting
+
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
@@ -63,13 +65,21 @@ public class RecipeDetailActivity extends AppCompatActivity {
                 Intent browserIntent = new Intent(Intent.ACTION_VIEW);
                 browserIntent.setData(Uri.parse(url));
                 startActivity(browserIntent);
+
             }
         });
 
-        //TODO(1) when saved button is clicked should persist to RoomDB
-
-
+        findViewById(R.id.saveRecipeButton).setOnClickListener(new View.OnClickListener() {
+            @Override
+            public void onClick(View view) {
+                saveRecipe();
+            }
+        });
 }
+    private void saveRecipe(){
+
+            //this should be an activity
+    }
 
     @NonNull
     private String getIngredientsFromRecipe(@NonNull Recipe recipe) {
@@ -86,6 +96,8 @@ public class RecipeDetailActivity extends AppCompatActivity {
 
         return listOfIngredientsStringBuilder.toString();
     }
+
+
 
 
 }
