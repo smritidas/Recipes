@@ -2,10 +2,10 @@
   "formatVersion": 1,
   "database": {
     "version": 1,
-    "identityHash": "9b2354c2fd93c9db67fae807e421fc9b",
+    "identityHash": "3a216e55f07c6871eeffd6e52dd6f640",
     "entities": [
       {
-        "tableName": "savedRecipe",
+        "tableName": "savedRecipe_table",
         "createSql": "CREATE TABLE IF NOT EXISTS `${TABLE_NAME}` (`id` INTEGER PRIMARY KEY AUTOINCREMENT NOT NULL, `name` TEXT, `imageURL` TEXT, `url` TEXT, `noOfServings` INTEGER NOT NULL)",
         "fields": [
           {
@@ -49,9 +49,10 @@
         "foreignKeys": []
       }
     ],
+    "views": [],
     "setupQueries": [
       "CREATE TABLE IF NOT EXISTS room_master_table (id INTEGER PRIMARY KEY,identity_hash TEXT)",
-      "INSERT OR REPLACE INTO room_master_table (id,identity_hash) VALUES(42, \"9b2354c2fd93c9db67fae807e421fc9b\")"
+      "INSERT OR REPLACE INTO room_master_table (id,identity_hash) VALUES(42, '3a216e55f07c6871eeffd6e52dd6f640')"
     ]
   }
 }

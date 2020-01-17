@@ -2,19 +2,14 @@ package com.example.android.recipes.ui;
 
 import android.content.Context;
 import android.content.Intent;
-import android.os.Parcel;
-import android.os.Parcelable;
-import android.provider.ContactsContract;
-import android.support.v7.app.AppCompatActivity;
+
+import androidx.appcompat.app.AppCompatActivity;
 import android.os.Bundle;
-import android.support.v7.widget.LinearLayoutManager;
-import android.support.v7.widget.RecyclerView;
+import androidx.recyclerview.widget.LinearLayoutManager;
+import androidx.recyclerview.widget.RecyclerView;
 import android.util.Log;
 import android.view.View;
 import android.widget.Button;
-import android.widget.ImageView;
-import android.widget.Toast;
-import com.bumptech.glide.Glide;
 
 
 import com.example.android.recipes.R;
@@ -62,13 +57,13 @@ public class RecipesListActivity extends AppCompatActivity implements RecipesAda
         getRecipes(ingredient);
 
         saveButton = findViewById(R.id.saveRecipeButton);
-        saveButton.setOnClickListener(new View.OnClickListener() {
-            @Override
-            public void onClick(View view) {
-                Log.d(TAG, "onClick: pressed");
-                //what to write to persist to database
-            }
-        });
+//        saveButton.setOnClickListener(new View.OnClickListener(){
+//            @Override
+//            public void onClick(View view) {
+//                Log.d(TAG, "onClick: pressed");
+//                //what to write to persist to database
+//            }
+//        });
     }
 
     private void getRecipes(String ingredient) {

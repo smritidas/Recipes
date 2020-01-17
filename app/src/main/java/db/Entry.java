@@ -2,20 +2,16 @@
 
 package db;
 
-import android.arch.persistence.room.ColumnInfo;
-import android.arch.persistence.room.Entity;
-import android.arch.persistence.room.PrimaryKey;
-
-import com.example.android.recipes.models.network.Ingredient;
-
-import java.util.List;
+import androidx.room.ColumnInfo;
+import androidx.room.Entity;
+import androidx.room.PrimaryKey;
 
 /**
  * NB This is the Entity class
  * TODO - ask how to rename this?
  */
 
-@android.arch.persistence.room.Entity(tableName = "savedRecipe_table")
+@androidx.room.Entity(tableName = "savedRecipe_table")
 public class Entry {
 
     @ColumnInfo
