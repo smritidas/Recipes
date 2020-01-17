@@ -1,0 +1,20 @@
+
+<menu xmlns:android="http://schemas.android.com/apk/res/android">
+
+    <item
+        android:id="@+id/search_for_recipes"
+        android:title="@string/search"
+        android:icon="@drawable/ic_search_black_24dp" />
+
+    <!--TODO - change this to the flaticon icon-->
+    <item
+        android:id="@+id/recipe_results"
+        android:title="@string/recipe_list"
+        android:icon="@drawable/ic_view_list_black_24dp" />
+
+    <item
+        android:id="@+id/favorite_recipes"
+        android:title="@string/favourite"
+        android:icon="@drawable/ic_favorite_border_black_24dp" />
+
+</menu>

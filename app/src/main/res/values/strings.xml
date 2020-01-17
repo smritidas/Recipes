@@ -1,7 +1,11 @@
 <resources>
+
+    <!-- Main Search -->
     <string name="app_name">Recipes</string>
     <string name="enter_ingredients">Enter Ingredients Here:</string>
     <string name="find_recipes">Find Recipes</string>
+
+    <!-- Recipe Details  -->
     <string name="recipe_name">Recipe Name</string>
     <string name="sourcesite">Sourcesite</string>
     <string name="save">Save Recipe</string>
@@ -10,4 +14,10 @@
     <string name="servings">Servings</string>
     <string name="Website">Website</string>
     <string name="Directions">Get Directions</string>
+
+    <!-- Bottom Navigation  -->
+    <string name="search">Search</string>
+    <string name="recipe_list">Results</string>
+    <string name="favourite">Favourites</string>
+
 </resources>
