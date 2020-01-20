@@ -15,6 +15,6 @@
     <item
         android:id="@+id/favorite_recipes"
         android:title="@string/favourite"
-        android:icon="@drawable/ic_favorite_border_black_24dp" />
+        android:icon="@drawable/ic_favorite_black_24dp" />
 
 </menu>
