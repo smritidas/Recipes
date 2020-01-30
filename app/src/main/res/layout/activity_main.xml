@@ -2,7 +2,6 @@
 
 <!-- XML for Main Activity (where user enters their ingredient) -->
 
-<!-- TODO Add powered by api somewhere -->
 
 <RelativeLayout
     xmlns:android="http://schemas.android.com/apk/res/android"
@@ -35,27 +34,42 @@
         android:textSize="60sp"
         android:textStyle="bold"/>
 
+    <TextView
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_below="@+id/appNameTextView"
+        android:layout_centerHorizontal="true"
+        android:id="@+id/poweredByTextView"
+        android:layout_marginTop="8dp"
+        android:textSize="15sp"
+        android:textStyle="italic"
+        android:textColor="@color/colorWhite"
+        android:text="@string/powered_by"
+        />
+
     <EditText
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
         android:id="@+id/ingredientEditText"
         android:background="@color/colorWhite"
-        android:layout_above="@id/findRecipeButton"
-        android:layout_marginBottom="10dp"
+        android:layout_marginBottom="20dp"
         android:padding="5dp"
         android:hint="@string/enter_ingredients"
         android:layout_centerHorizontal="true"
+        android:layout_alignParentBottom="true"
         />
 
     <Button
-        android:layout_width="match_parent"
+        android:layout_width="wrap_content"
         android:layout_height="wrap_content"
         android:id="@+id/findRecipeButton"
         android:background="@color/colorPrimaryDark"
         android:textColor="@color/colorTextIcons"
         android:text="@string/find_recipes"
+        android:layout_marginBottom="20dp"
         android:layout_alignParentBottom="true"
-        android:layout_centerHorizontal="true"
+        android:layout_toEndOf="@id/findRecipeButton"
+        android:layout_alignParentEnd="true"
         />
 
 </RelativeLayout>

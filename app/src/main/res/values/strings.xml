@@ -4,6 +4,7 @@
     <string name="app_name">Recipes</string>
     <string name="enter_ingredients">Enter Ingredients Here:</string>
     <string name="find_recipes">Find Recipes</string>
+    <string name="powered_by">Powered by Edamam API</string>
 
     <!-- Recipe Details  -->
     <string name="recipe_name">Recipe Name</string>
