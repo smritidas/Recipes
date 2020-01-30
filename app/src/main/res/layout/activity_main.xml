@@ -14,7 +14,7 @@
 
     
     <ImageView
-        android:alpha="0.7"
+        android:alpha="0.5"
         android:layout_width="wrap_content"
         android:layout_height="match_parent"
         android:id="@+id/imageView"
@@ -52,24 +52,22 @@
         android:layout_height="wrap_content"
         android:id="@+id/ingredientEditText"
         android:background="@color/colorWhite"
-        android:layout_marginBottom="20dp"
+        android:layout_marginBottom="30dp"
         android:padding="5dp"
         android:hint="@string/enter_ingredients"
         android:layout_centerHorizontal="true"
         android:layout_alignParentBottom="true"
         />
 
-    <Button
+    <ImageView
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
+        app:srcCompat="@drawable/ic_search_white_24dp"
         android:id="@+id/findRecipeButton"
-        android:background="@color/colorPrimaryDark"
-        android:textColor="@color/colorTextIcons"
-        android:text="@string/find_recipes"
-        android:layout_marginBottom="20dp"
+        android:layout_marginBottom="35dp"
         android:layout_alignParentBottom="true"
-        android:layout_toEndOf="@id/findRecipeButton"
-        android:layout_alignParentEnd="true"
+        android:layout_toEndOf="@id/ingredientEditText"
+        android:paddingStart="8dp"
         />
 
 </RelativeLayout>

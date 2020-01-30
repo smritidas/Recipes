@@ -8,6 +8,7 @@ import androidx.appcompat.app.AppCompatActivity;
 import android.view.View;
 import android.widget.Button;
 import android.widget.EditText;
+import android.widget.ImageView;
 import android.widget.TextView;
 
 import com.example.android.recipes.R;
@@ -21,7 +22,7 @@ public class MainActivity extends AppCompatActivity {
     private static final String TAG = MainActivity.class.getSimpleName();
 
     @BindView(R.id.ingredientEditText) EditText ingredientEditText;
-    @BindView(R.id.findRecipeButton) Button findRecipesButton;
+    @BindView(R.id.findRecipeButton) ImageView findRecipesButton;
     @BindView(R.id.appNameTextView) TextView appNameTextView;
 
     @Override
