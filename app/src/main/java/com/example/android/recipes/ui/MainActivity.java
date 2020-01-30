@@ -19,6 +19,8 @@ import butterknife.ButterKnife;
 
 public class MainActivity extends AppCompatActivity {
 
+    //TODO how do I search using only enter?
+
     private static final String TAG = MainActivity.class.getSimpleName();
 
     @BindView(R.id.ingredientEditText) EditText ingredientEditText;
