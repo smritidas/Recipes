@@ -47,7 +47,7 @@ public class RecipesAdapter extends RecyclerView.Adapter<RecipesAdapter.ViewHold
         @BindView(R.id.recipeImageView) ImageView recipe_imageView;
         @BindView(R.id.recipeNameTextView) TextView nameOfRecipe_textView;
        // @BindView(R.id.noOfServings) TextView yield_textView;
-        @BindView(R.id.sourceSite) TextView url_textView;
+     //  @BindView(R.id.sourceSite) TextView url_textView;
 
         public ViewHolder(View itemView) {
             super(itemView);
@@ -58,7 +58,7 @@ public class RecipesAdapter extends RecyclerView.Adapter<RecipesAdapter.ViewHold
             nameOfRecipe_textView.setText(recipe.getName());
           //  yield_textView.setText(Integer.toString(recipe.getNoOfServings()));
 
-            url_textView.setText(recipe.getUrl());
+         //   url_textView.setText(recipe.getUrl());
 
             itemView.setOnClickListener(this); //call in setup
 
@@ -97,8 +97,6 @@ public class RecipesAdapter extends RecyclerView.Adapter<RecipesAdapter.ViewHold
         int newRecipeSize = recipes.size();
         this.recipes.addAll(0, recipes);
 
-        // TODO: Check out this link
-        // https://github.com/codepath/android_guides/wiki/Using-the-RecyclerView#notifying-the-adapter
         notifyItemRangeInserted(0, newRecipeSize);
     }
 }

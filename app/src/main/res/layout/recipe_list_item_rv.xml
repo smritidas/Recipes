@@ -11,7 +11,10 @@
     android:id="@+id/parent_recyclerview"
     android:orientation="horizontal"
     android:layout_width="match_parent"
-    android:layout_height="wrap_content">
+    android:layout_height="wrap_content"
+    android:paddingBottom="4dp"
+    android:paddingTop="4dp"
+    >
 
     <ImageView
         android:layout_width="130dp"
@@ -41,16 +44,6 @@
             android:ellipsize="end"
             android:maxLines="1" />
 
-
-        <TextView
-            android:layout_width="wrap_content"
-            android:layout_height="wrap_content"
-            android:id="@+id/sourceSite"
-            android:textSize="12sp"
-            android:text="@string/sourcesite"
-            android:textColor="@color/colorPrimaryText"
-            tools:fontFamily="@font/open_sans_light"
-            />
 
         <!-- TODO Add save icon here -->
 
