@@ -5,11 +5,12 @@
     xmlns:tools="http://schemas.android.com/tools"
     android:layout_width="match_parent"
     android:layout_height="match_parent"
+    tools:context=".ui.RecipeDetailActivity"
     app:layout_behavior="@string/appbar_scrolling_view_behavior"
     >
 
     <ImageView
-        android:id="@+id/imageView2"
+        android:id="@+id/recipeImageView"
         android:layout_width="wrap_content"
         android:layout_height="180dp"
         android:scaleType="centerCrop"
@@ -20,17 +21,17 @@
         app:srcCompat="@drawable/tea" />
 
     <ImageView
-        android:id="@+id/imageView4"
+        android:id="@+id/SaveRecipeImageView"
         android:layout_width="40dp"
         android:layout_height="40dp"
         android:layout_marginTop="8dp"
-        android:layout_marginRight="8dp"
+        android:layout_marginEnd="8dp"
         app:layout_constraintRight_toRightOf="parent"
-        app:layout_constraintTop_toBottomOf="@+id/imageView2"
-        app:srcCompat="@android:drawable/btn_star_big_on" />
+        app:layout_constraintTop_toBottomOf="@+id/recipeImageView"
+        app:srcCompat="@drawable/ic_favorite_border_black_24dp" />
 
     <TextView
-        android:id="@+id/RecipeName"
+        android:id="@+id/recipeNameTextView"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
         android:layout_marginStart="8dp"
@@ -38,7 +39,7 @@
         android:text="Recipe Name"
         android:textSize="25sp"
         app:layout_constraintStart_toStartOf="parent"
-        app:layout_constraintTop_toBottomOf="@+id/imageView2" />
+        app:layout_constraintTop_toBottomOf="@+id/recipeImageView" />
 
     <TextView
         android:id="@+id/Servings"
@@ -48,10 +49,10 @@
         android:layout_marginTop="16dp"
         android:text="No of Servings"
         app:layout_constraintStart_toStartOf="parent"
-        app:layout_constraintTop_toBottomOf="@+id/RecipeName" />
+        app:layout_constraintTop_toBottomOf="@+id/recipeNameTextView" />
 
     <TextView
-        android:id="@+id/Ingredients"
+        android:id="@+id/IngredientsTitle"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
         android:layout_marginEnd="8dp"
@@ -63,7 +64,7 @@
         app:layout_constraintTop_toBottomOf="@+id/Servings" />
 
     <TextView
-        android:id="@+id/Directions"
+        android:id="@+id/ingredientTextView"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
         android:layout_marginEnd="8dp"
@@ -72,10 +73,10 @@
         android:text="Ingredients go here"
         app:layout_constraintEnd_toEndOf="parent"
         app:layout_constraintStart_toStartOf="parent"
-        app:layout_constraintTop_toBottomOf="@+id/Ingredients" />
+        app:layout_constraintTop_toBottomOf="@+id/IngredientsTitle" />
 
     <Button
-        android:id="@+id/material_button"
+        android:id="@+id/recipeWebsiteButton"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
         android:layout_marginStart="8dp"

@@ -28,7 +28,7 @@ public class RecipeDetailActivity extends AppCompatActivity {
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
-        setContentView(R.layout.activity_recipe_detail);
+        setContentView(R.layout.activity_recipe);
 
         ImageView recipeImage = findViewById(R.id.recipeImageView);
         TextView recipeName = findViewById(R.id.recipeNameTextView);
@@ -67,12 +67,12 @@ public class RecipeDetailActivity extends AppCompatActivity {
             }
         });
 
-        findViewById(R.id.saveRecipeButton).setOnClickListener(new View.OnClickListener() {
-            @Override
-            public void onClick(View view) {
-                saveRecipe();
-            }
-        });
+//        findViewById(R.id.saveRecipeButton).setOnClickListener(new View.OnClickListener() {
+//            @Override
+//            public void onClick(View view) {
+//                saveRecipe();
+//            }
+//        });
 }
     private void saveRecipe(){
 
