@@ -1,5 +1,4 @@
-<!-- The recipe displayed -->
-<!--TODO (1) Does this need a scrollview? -->
+<!-- This can be deleted -->
 
 <FrameLayout
     xmlns:android="http://schemas.android.com/apk/res/android"
