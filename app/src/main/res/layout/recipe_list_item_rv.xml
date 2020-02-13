@@ -43,8 +43,6 @@
             android:ellipsize="end"
             android:maxLines="1" />
 
-
-        <!-- TODO Add save icon here -->
         
         <ImageView
             android:id="@+id/save_recipe_listview"

@@ -56,7 +56,7 @@ public class RecipesListActivity extends AppCompatActivity implements RecipesAda
         String ingredient = intent.getStringExtra("ingredient");
         getRecipes(ingredient);
 
-        saveButton = findViewById(R.id.saveRecipeButton);
+ //       saveButton = findViewById(R.id.saveRecipeButton);
 //        saveButton.setOnClickListener(new View.OnClickListener(){
 //            @Override
 //            public void onClick(View view) {
@@ -96,6 +96,7 @@ public class RecipesListActivity extends AppCompatActivity implements RecipesAda
         startIntent.putExtra("NAME", recipe.getName());
         startIntent.putExtra("URL", recipe.getUrl());
         startIntent.putExtra("IMAGE_URL", recipe.getImageURL());
+        startIntent.putExtra("YIELD", recipe.getNoOfServings()); //TODO figure out why this isn't working
         StringBuilder listOfIngredientsStringBuilder = new StringBuilder();
 
         String SEPARATOR = ",";

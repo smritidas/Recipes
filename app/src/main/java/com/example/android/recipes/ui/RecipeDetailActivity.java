@@ -34,16 +34,17 @@ public class RecipeDetailActivity extends AppCompatActivity {
         TextView recipeName = findViewById(R.id.recipeNameTextView);
         TextView recipeIngredients = findViewById(R.id.ingredientTextView);
         Button recipeWebsiteButton = findViewById(R.id.recipeWebsiteButton);
-
+        TextView recipeServings = findViewById(R.id.servings);
 
         String name = getIntent().getStringExtra("NAME");
         final String url = getIntent().getStringExtra("URL");
         String imageUrl = getIntent().getStringExtra("IMAGE_URL");
+        String servings = getIntent().getStringExtra("YIELD");
 
         Recipe recipe = RecipeSelectedManager.getInstance().getSelectedRecipe();
 
-
         recipeName.setText(name);
+        recipeServings.setText(servings);
         recipeWebsiteButton.setText(url); //TODO hide the URL behind the button
 
         String listOfIngredients = getIngredientsFromRecipe(recipe);
