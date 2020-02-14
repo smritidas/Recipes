@@ -8,7 +8,7 @@
 
     <!-- Main Activity Dimensions-->
     <dimen name="margin_top">8dp</dimen>
-    <dimen name="margin_search_bottom">35dp</dimen>
+    <dimen name="margin_search_bottom">50dp</dimen>
 
 
 </resources>
