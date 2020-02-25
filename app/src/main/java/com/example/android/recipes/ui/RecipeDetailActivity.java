@@ -6,6 +6,7 @@ import android.net.Uri;
 import android.os.Bundle;
 import androidx.annotation.NonNull;
 import androidx.appcompat.app.AppCompatActivity;
+import org.apache.commons.text.StringEscapeUtils;
 
 import android.view.View;
 import android.widget.Button;
@@ -39,7 +40,7 @@ public class RecipeDetailActivity extends AppCompatActivity {
         String name = getIntent().getStringExtra("NAME");
         final String url = getIntent().getStringExtra("URL");
         String imageUrl = getIntent().getStringExtra("IMAGE_URL");
-        String servings = getIntent().getStringExtra("YIELD");
+        String servings = getIntent().getStringExtra("YIELD");//TODO how to get the yield to show?
 
         Recipe recipe = RecipeSelectedManager.getInstance().getSelectedRecipe();
 
@@ -83,18 +84,23 @@ public class RecipeDetailActivity extends AppCompatActivity {
     @NonNull
     private String getIngredientsFromRecipe(@NonNull Recipe recipe) {
         //This is to convert the list of ingredients to a string
+
         StringBuilder listOfIngredientsStringBuilder = new StringBuilder();
 
-        String SEPARATOR = ",";
+        String SEPARATOR = "";
         List<Ingredient> ingredients = recipe.getIngredients();
 
         for(Ingredient ingredient : ingredients){
             listOfIngredientsStringBuilder.append(ingredient.getText());
             listOfIngredientsStringBuilder.append(SEPARATOR);
+            listOfIngredientsStringBuilder.append("\n");
         }
+
 
         return listOfIngredientsStringBuilder.toString();
     }
+
+
 
 
 

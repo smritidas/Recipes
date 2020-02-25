@@ -87,4 +87,7 @@ dependencies {
     //Constraint Layout
     implementation "androidx.constraintlayout:constraintlayout:2.0.0-beta4"
 
+    //Strings escape
+    implementation 'org.apache.commons:commons-text:1.8'
+
 }
