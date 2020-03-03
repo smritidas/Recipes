@@ -22,7 +22,7 @@
 
 
     <EditText
-        android:id="@+id/editText"
+        android:id="@+id/editTextSearch"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
         android:layout_marginStart="8dp"
@@ -37,7 +37,7 @@
         app:layout_constraintTop_toTopOf="parent" />
 
     <ImageView
-        android:id="@+id/imageView2"
+        android:id="@+id/searchInput"
         android:layout_width="35dp"
         android:layout_height="35dp"
         android:layout_marginStart="8dp"
@@ -46,7 +46,7 @@
         app:layout_constraintBottom_toBottomOf="parent"
         app:layout_constraintEnd_toEndOf="parent"
         app:layout_constraintHorizontal_bias="0.0"
-        app:layout_constraintStart_toEndOf="@id/editText"
+        app:layout_constraintStart_toEndOf="@id/editTextSearch"
         app:layout_constraintTop_toTopOf="@+id/imageView_search_background"
         app:srcCompat="@drawable/ic_search_white_24dp" />
 

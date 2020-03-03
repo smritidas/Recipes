@@ -31,8 +31,8 @@ public class RecipesAdapter extends RecyclerView.Adapter<RecipesAdapter.ViewHold
     private List<Recipe> recipes = new ArrayList<>();
     private Context context;
 
-    public interface ListItemClickListener{ //added interface here
-        void onClick(Recipe recipe); //method
+    public interface ListItemClickListener{
+        void onClick(Recipe recipe);
     }
 
     public RecipesAdapter(Context context, ListItemClickListener listener) {
@@ -46,7 +46,7 @@ public class RecipesAdapter extends RecyclerView.Adapter<RecipesAdapter.ViewHold
 
         @BindView(R.id.recipeImageView) ImageView recipe_imageView;
         @BindView(R.id.recipeNameTextView) TextView nameOfRecipe_textView;
-       // @BindView(R.id.noOfServings) TextView yield_textView;
+        @BindView(R.id.noOfServings) TextView yield_textView;
      //  @BindView(R.id.sourceSite) TextView url_textView;
 
         public ViewHolder(View itemView) {
@@ -56,11 +56,11 @@ public class RecipesAdapter extends RecyclerView.Adapter<RecipesAdapter.ViewHold
 
         public void setupWithRecipe(@NonNull Recipe recipe) {
             nameOfRecipe_textView.setText(recipe.getName());
-          //  yield_textView.setText(Integer.toString(recipe.getNoOfServings()));
+            yield_textView.setText(Integer.toString(recipe.getNoOfServings()));
 
          //   url_textView.setText(recipe.getUrl());
 
-            itemView.setOnClickListener(this); //call in setup
+            itemView.setOnClickListener(this);
 
             Glide.with(recipe_imageView)
                     .load(recipe.getImageURL())

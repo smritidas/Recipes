@@ -49,7 +49,6 @@ public class RecipeDetailActivity extends AppCompatActivity {
         recipeWebsiteButton.setText(url); //TODO hide the URL behind the button
 
         String listOfIngredients = getIngredientsFromRecipe(recipe);
-      //  Log.i("Ingredients: ", listOfIngredients);
         recipeIngredients.setText(listOfIngredients);
 
         Glide.with(recipeImage)
@@ -65,6 +64,7 @@ public class RecipeDetailActivity extends AppCompatActivity {
                 Intent browserIntent = new Intent(Intent.ACTION_VIEW);
                 browserIntent.setData(Uri.parse(url));
                 startActivity(browserIntent);
+
 
             }
         });
